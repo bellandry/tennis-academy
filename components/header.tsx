@@ -81,13 +81,15 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/#contact"
-              className="px-4 py-3 mt-2 btn-tennis text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              S&apos;inscrire
-            </Link>
+            <Button asChild size="lg">
+              <Link
+                href="/#contact"
+                className="px-4 py-3 mt-2 btn-tennis text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                S&apos;inscrire
+              </Link>
+            </Button>
           </nav>
         </div>
       )}
