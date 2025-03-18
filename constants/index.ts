@@ -258,3 +258,34 @@ export type ProgramProps = {
   borderColor: string;
   image: string;
 };
+
+export const testimonials = [
+  {
+    name: "Sophie Dubois",
+    role: "Étudiante - 19 ans",
+    image: "https://i.pravatar.cc/150?img=1",
+    content:
+      "L'académie m'a aidée à améliorer mon jeu de façon spectaculaire. Grâce aux conseils personnalisés et à l'attention des coachs, j'ai pu intégrer l'équipe de mon université.",
+  },
+  {
+    name: "Thomas Laurent",
+    role: "Parent d'élève",
+    image: "https://i.pravatar.cc/150?img=8",
+    content:
+      "Mon fils adore ses cours à l'académie. Les professeurs savent parfaitement adapter leur pédagogie aux enfants tout en les faisant progresser. Un environnement stimulant et bienveillant.",
+  },
+  {
+    name: "Julien Moreau",
+    role: "Joueur amateur - 35 ans",
+    image: "https://i.pravatar.cc/150?img=11",
+    content:
+      "J'ai repris le tennis après 10 ans d'arrêt et l'approche technique des coachs m'a permis de retrouver rapidement mes sensations tout en corrigeant mes mauvaises habitudes.",
+  },
+];
+
+export const stats = [
+  { value: "10+", label: "Années d'expérience" },
+  { value: "15", label: "Professeurs certifiés" },
+  { value: "2500+", label: "Élèves formés" },
+  { value: "12", label: "Courts de tennis" },
+];
