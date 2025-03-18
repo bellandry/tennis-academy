@@ -16,8 +16,8 @@ export default function HeroSection() {
       const shadowElem = shadowRef.current;
 
       if (ballElem && shadowElem) {
-        const xPos = (clientX / window.innerWidth - 0.5) * 20;
-        const yPos = (clientY / window.innerHeight - 0.5) * 20;
+        const xPos = (clientX / window.innerWidth - 0.5) * 100;
+        const yPos = (clientY / window.innerHeight - 0.5) * 100;
 
         ballElem.style.transform = `translate(${xPos}px, ${yPos}px)`;
         shadowElem.style.transform = `translate(${xPos * 1.5}px, ${
@@ -36,8 +36,8 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-tennis-50/80 to-white"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-tennis-100/50 blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-tennis-100 to-white" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-tennis-100/50 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 md:px-8 relative z-10 py-16">
@@ -101,13 +101,13 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce-subtle hidden md:block">
-        <a
+        <Link
           href="#a-propos"
           className="flex flex-col items-center text-gray-500 hover:text-tennis-500 transition-colors"
         >
           <span className="text-sm font-medium mb-2">Découvrir</span>
           <ChevronDown size={20} className="animate-bounce" />
-        </a>
+        </Link>
       </div>
     </section>
   );
