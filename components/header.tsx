@@ -50,8 +50,12 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-          <Button asChild size="lg">
-            <Link href="/#contact" className="ml-4 btn-tennis">
+          <Button
+            asChild
+            size="lg"
+            className="bg-tennis-500 hover:bg-tennis-600"
+          >
+            <Link href="/#contact" className="ml-4">
               S&apos;inscrire
             </Link>
           </Button>
@@ -81,7 +85,11 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <Button asChild size="lg">
+            <Button
+              asChild
+              size="lg"
+              className="w-full bg-tennis hover:bg-tennis-600"
+            >
               <Link
                 href="/#contact"
                 className="px-4 py-3 mt-2 btn-tennis text-center"

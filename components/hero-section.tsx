@@ -68,13 +68,21 @@ export default function HeroSection() {
               className="flex flex-wrap justify-center gap-4 animate-fade-in"
               style={{ animationDelay: "0.6s" }}
             >
-              <Button asChild size="lg" className="w-full md:w-1/3">
+              <Button
+                asChild
+                size="lg"
+                className="w-full md:w-1/3 bg-tennis hover:bg-tennis-600"
+              >
                 <Link href="#contact" className="btn-tennis">
                   S&apos;inscrire maintenant
                 </Link>
               </Button>
-              <Button asChild size="lg" className="w-full md:w-1/3">
-                <Link href="#programmes" className="btn-tennis-outline">
+              <Button
+                asChild
+                size="lg"
+                className="w-full md:w-1/3 bg-tennis-50 text-tennis hover:bg-tennis-600 hover:text-tennis-50"
+              >
+                <Link href="#programs" className="btn-tennis-outline">
                   Découvrir nos programmes
                 </Link>
               </Button>

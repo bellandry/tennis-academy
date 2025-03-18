@@ -47,6 +47,7 @@ export const programs = [
       "Plaisir de jouer",
     ],
     color: "bg-blue-50",
+    colorCheck: "bg-blue-300",
     textColor: "text-blue-600",
     borderColor: "border-blue-200",
     image:
@@ -64,6 +65,7 @@ export const programs = [
       "Matchs supervisés",
     ],
     color: "bg-tennis-50",
+    colorCheck: "bg-tennis-300",
     textColor: "text-tennis-600",
     borderColor: "border-tennis-200",
     image:
@@ -81,6 +83,7 @@ export const programs = [
       "Suivi personnalisé",
     ],
     color: "bg-amber-50",
+    colorCheck: "bg-amber-300",
     textColor: "text-amber-600",
     borderColor: "border-amber-200",
     image:
@@ -98,6 +101,7 @@ export const programs = [
       "Résultats rapides",
     ],
     color: "bg-purple-50",
+    colorCheck: "bg-purple-300",
     textColor: "text-purple-600",
     borderColor: "border-purple-200",
     image:
@@ -242,3 +246,15 @@ export const programmes = [
       "https://images.unsplash.com/photo-1582650848997-fcb00b5a72e4?auhref=format&fit=crop&w=1200&q=80",
   },
 ];
+
+export type ProgramProps = {
+  title: string;
+  slug: string;
+  description: string;
+  features: string[];
+  color: string;
+  colorCheck: string;
+  textColor: string;
+  borderColor: string;
+  image: string;
+};
