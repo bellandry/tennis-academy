@@ -36,7 +36,7 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-tennis-100 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-tennis-50 to-white" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-tennis-100/50 blur-3xl" />
       </div>
 
