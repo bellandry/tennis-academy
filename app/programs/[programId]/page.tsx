@@ -55,7 +55,7 @@ export default function Programmes() {
 
   return (
     <>
-      <main className="pt-24 md:pt-28">
+      <main className="pt-20">
         {/* Hero for the program */}
         <ProgramHero currentProgram={currentProgram} />
 

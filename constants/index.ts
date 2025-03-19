@@ -4,7 +4,7 @@ export const navLinks = [
   { name: "Accueil", path: "/" },
   { name: "A propos", path: "/#a-propos" },
   { name: "Programmes", path: "/programs/debutants" },
-  { name: "Accomplissements", path: "/accomplissements" },
+  { name: "Accomplissements", path: "/accomplishments" },
   { name: "Contact", path: "/#contact" },
 ];
 
@@ -338,4 +338,203 @@ export const stats = [
   { value: "15", label: "Professeurs certifiés" },
   { value: "2500+", label: "Élèves formés" },
   { value: "12", label: "Courts de tennis" },
+];
+
+export type AccomplishmentType = "competition" | "formation" | "evenement";
+
+interface Accomplishment {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  type: AccomplishmentType;
+  image: string;
+  students: string[];
+  location: string;
+  achievement?: string;
+  category?: string;
+}
+
+export const accomplishments: Accomplishment[] = [
+  {
+    id: 1,
+    title: "Tournoi régional junior",
+    description:
+      "Une performance exceptionnelle de nos jeunes joueurs qui ont brillé lors du tournoi régional junior, remportant plusieurs catégories.",
+    date: "15 juin 2023",
+    type: "competition",
+    image:
+      "https://images.unsplash.com/photo-1549590143-d5855148a9d5?auto=format&fit=crop&w=800&q=80",
+    students: ["Emma Dupont", "Lucas Martin", "Chloé Petit"],
+    location: "Club de Tennis de Lyon",
+    achievement: "1ère place en simple et double",
+    category: "U14",
+  },
+  {
+    id: 2,
+    title: "Stage de perfectionnement",
+    description:
+      "Un groupe d'élèves a participé à un stage intensif de perfectionnement avec des entraîneurs professionnels internationaux.",
+    date: "12 avril 2023",
+    type: "formation",
+    image:
+      "https://images.unsplash.com/photo-1610645872672-4abefc4209ce?auto=format&fit=crop&w=800&q=80",
+    students: [
+      "Alexandre Durand",
+      "Sophie Moreau",
+      "Thomas Lefebvre",
+      "Julie Lambert",
+    ],
+    location: "Académie Nationale de Tennis",
+  },
+  {
+    id: 3,
+    title: "Championnat régional",
+    description:
+      "Notre équipe senior a représenté l'académie lors du championnat régional, atteignant les demi-finales dans une compétition très relevée.",
+    date: "22 mai 2023",
+    type: "competition",
+    image:
+      "https://images.unsplash.com/photo-1622134445466-e64696775939?auto=format&fit=crop&w=800&q=80",
+    students: ["Nicolas Bernard", "Marie Robert", "Paul Dubois"],
+    location: "Centre sportif de Montpellier",
+    achievement: "Demi-finalistes",
+    category: "Senior",
+  },
+  {
+    id: 4,
+    title: "Démonstration au salon du sport",
+    description:
+      "Nos jeunes talents ont fait une démonstration impressionnante au salon du sport, attirant l'attention des médias locaux.",
+    date: "7 mars 2023",
+    type: "evenement",
+    image:
+      "https://images.unsplash.com/photo-1530915261396-61b5c10f461c?auto=format&fit=crop&w=800&q=80",
+    students: [
+      "Léa Rousseau",
+      "Gabriel Martin",
+      "Inès Fournier",
+      "Hugo Lambert",
+    ],
+    location: "Parc des expositions de Nantes",
+  },
+  {
+    id: 5,
+    title: "Tournoi national U16",
+    description:
+      "Une performance remarquable de notre équipe U16 qui a brillé lors de ce tournoi national très disputé.",
+    date: "18 juillet 2023",
+    type: "competition",
+    image:
+      "https://images.unsplash.com/photo-1542144582-1ba00456b5e3?auto=format&fit=crop&w=800&q=80",
+    students: ["Mathis Girard", "Camille Roux", "Nathan Leroy"],
+    location: "Roland-Garros, Paris",
+    achievement: "Vainqueurs",
+    category: "U16",
+  },
+  {
+    id: 6,
+    title: "Formation avec un champion international",
+    description:
+      "Session exclusive avec un ancien champion du Grand Chelem qui a partagé son expérience et ses conseils techniques avec nos étudiants avancés.",
+    date: "2 février 2023",
+    type: "formation",
+    image:
+      "https://images.unsplash.com/photo-1617339860293-ebb25b6887c7?auto=format&fit=crop&w=800&q=80",
+    students: [
+      "Victor Simon",
+      "Charlotte Gaillard",
+      "Antoine Morel",
+      "Manon Dupuy",
+    ],
+    location: "Notre académie",
+  },
+  {
+    id: 7,
+    title: "Tournoi de charité",
+    description:
+      "Notre académie a organisé un tournoi de charité pour soutenir une association locale, avec une forte participation de nos élèves et du public.",
+    date: "9 septembre 2023",
+    type: "evenement",
+    image:
+      "https://images.unsplash.com/photo-1558365146-9c461aa0ed5b?auto=format&fit=crop&w=800&q=80",
+    students: ["Équipe complète de l'académie"],
+    location: "Courts municipaux de Bordeaux",
+  },
+  {
+    id: 8,
+    title: "Championnat national junior",
+    description:
+      "Qualification et excellente performance de nos juniors lors du championnat national, un événement très relevé.",
+    date: "28 août 2023",
+    type: "competition",
+    image:
+      "https://images.unsplash.com/photo-1559587564-f441de686473?auto=format&fit=crop&w=800&q=80",
+    students: [
+      "Emma Dupont",
+      "Lucas Martin",
+      "Alexandre Durand",
+      "Sophie Moreau",
+    ],
+    location: "Centre National du Tennis, Paris",
+    achievement: "Finalistes",
+    category: "Junior Elite",
+  },
+  {
+    id: 9,
+    title: "Camp d'entraînement estival",
+    description:
+      "Un programme intensif d'été qui a permis à nos élèves de perfectionner leur technique et leur condition physique avant la nouvelle saison.",
+    date: "15 juillet 2023",
+    type: "formation",
+    image:
+      "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?auto=format&fit=crop&w=800&q=80",
+    students: ["Plus de 30 étudiants de tous niveaux"],
+    location: "Centre sportif de la côte d'Azur",
+  },
+  {
+    id: 10,
+    title: "Masters régional",
+    description:
+      "Une compétition de très haut niveau où nos joueurs élites ont pu se mesurer aux meilleurs de la région.",
+    date: "5 novembre 2023",
+    type: "competition",
+    image:
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+    students: [
+      "Nicolas Bernard",
+      "Marie Robert",
+      "Mathis Girard",
+      "Camille Roux",
+    ],
+    location: "Complexe sportif de Toulouse",
+    achievement: "2ème place par équipe",
+    category: "Toutes catégories",
+  },
+  {
+    id: 11,
+    title: "Journée portes ouvertes",
+    description:
+      "Un événement ouvert au public où nos élèves ont pu démontrer leurs progrès et les méthodes d'enseignement de notre académie.",
+    date: "20 mai 2023",
+    type: "evenement",
+    image:
+      "https://images.unsplash.com/photo-1599491295783-6241f4b1c50f?auto=format&fit=crop&w=800&q=80",
+    students: ["Tous les étudiants de l'académie"],
+    location: "Notre académie",
+  },
+  {
+    id: 12,
+    title: "Challenge international U18",
+    description:
+      "Participation exceptionnelle au Challenge International U18, une compétition prestigieuse regroupant les meilleurs jeunes joueurs.",
+    date: "8 décembre 2023",
+    type: "competition",
+    image:
+      "https://images.unsplash.com/photo-1541745474313-686197dab7ec?auto=format&fit=crop&w=800&q=80",
+    students: ["Léa Rousseau", "Gabriel Martin", "Victor Simon"],
+    location: "Tennis Club International, Madrid",
+    achievement: "Quart de finaliste",
+    category: "U18",
+  },
 ];
