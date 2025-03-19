@@ -24,7 +24,7 @@ export const MainContent = ({ currentProgram }: MainContentProps) => {
     <div className="md:col-span-2">
       <div className="space-y-8">
         <div className="prose prose-lg max-w-none animate-on-scroll">
-          <h2 className="text-3xl">À propos de ce programme</h2>
+          <h2 className="text-3xl ">À propos de ce programme</h2>
           <p>{currentProgram.longDescription}</p>
           <p>
             Nos instructeurs sont des professionnels certifiés avec une vaste

@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { animateOnScroll } from "../lib/animations";
+import { Stats } from "./stats";
 
 export default function TestimonialsSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -139,6 +140,8 @@ export default function TestimonialsSection() {
             </div>
           </div>
         </div>
+
+        <Stats />
       </div>
     </section>
   );
