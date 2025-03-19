@@ -2,6 +2,7 @@ import { Award, MapPin, Users, Zap } from "lucide-react";
 
 export const navLinks = [
   { name: "Accueil", path: "/" },
+  { name: "A propos", path: "/#a-propos" },
   { name: "Programmes", path: "/programs/debutants" },
   { name: "Accomplissements", path: "/accomplissements" },
   { name: "Contact", path: "/#contact" },
@@ -104,6 +105,24 @@ export const programs = [
     colorCheck: "bg-purple-300",
     textColor: "text-purple-600",
     borderColor: "border-purple-200",
+    image:
+      "https://images.unsplash.com/photo-1582650848997-fcb00b5a72e4?auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    title: "Cours particuliers",
+    slug: "particuliers",
+    description:
+      "Un accompagnement personnalisé pour progresser rapidement et atteindre vos objectifs.",
+    features: [
+      "Enseignement personnalisé",
+      "Analyse technique approfondie",
+      "Correction en temps réel",
+      "Optimisation des performances",
+    ],
+    color: "bg-green-50",
+    colorCheck: "bg-green-300",
+    textColor: "text-green-600",
+    borderColor: "border-green-200",
     image:
       "https://images.unsplash.com/photo-1582650848997-fcb00b5a72e4?auto=format&fit=crop&w=600&q=80",
   },
@@ -244,6 +263,37 @@ export const programmes = [
     lightColor: "bg-purple-100",
     image:
       "https://images.unsplash.com/photo-1582650848997-fcb00b5a72e4?auhref=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "particuliers",
+    title: "Cours particuliers",
+    slug: "particuliers",
+    description:
+      "Un accompagnement personnalisé pour progresser rapidement et atteindre vos objectifs.",
+    longDescription:
+      "Nos cours particuliers sont conçus pour offrir un enseignement sur mesure adapté à votre niveau et à vos objectifs. Que vous souhaitiez perfectionner votre technique, améliorer votre condition physique ou préparer une compétition, nos coachs expérimentés vous guideront avec une approche personnalisée. Chaque séance est ajustée en fonction de vos besoins pour une progression optimale.",
+    price: "À partir de 50€ / séance",
+    duration: "1h par séance",
+    frequency: "Selon vos disponibilités",
+    ageGroups: "Enfants (5-12 ans), Adolescents (13-17 ans), Adultes (18+)",
+    maxGroupSize: 1,
+    features: [
+      "Enseignement personnalisé",
+      "Analyse technique approfondie",
+      "Correction en temps réel",
+      "Optimisation des performances",
+    ],
+    schedule: [
+      { day: "Selon disponibilités", time: "À définir avec le coach" },
+    ],
+    color: "bg-green-50",
+    textColor: "text-green-600",
+    borderColor: "border-green-200",
+    highlightColor: "bg-green-600",
+    highlightTextColor: "text-white",
+    lightColor: "bg-green-100",
+    image:
+      "https://images.unsplash.com/photo-1575031643824-2c88a047b2a6?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 

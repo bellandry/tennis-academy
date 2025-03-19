@@ -39,7 +39,10 @@ export default function ProgramsSection() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/programs" className="btn-tennis animate-on-scroll">
+          <Link
+            href="/programs/debutants"
+            className="btn-tennis animate-on-scroll"
+          >
             Voir tous nos programmes
           </Link>
         </div>
