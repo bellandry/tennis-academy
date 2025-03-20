@@ -342,7 +342,7 @@ export const stats = [
 
 export type AccomplishmentType = "competition" | "formation" | "evenement";
 
-interface Accomplishment {
+export interface Accomplishment {
   id: number;
   title: string;
   description: string;
@@ -537,4 +537,12 @@ export const accomplishments: Accomplishment[] = [
     achievement: "Quart de finaliste",
     category: "U18",
   },
+];
+
+// Accomplisments
+export const accomplishmentStats = [
+  { label: "Compétitions remportées", value: "24+" },
+  { label: "Élèves formés", value: "150+" },
+  { label: "Années d'expérience", value: "10" },
+  { label: "Tournois organisés", value: "8" },
 ];
