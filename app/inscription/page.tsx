@@ -3,7 +3,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
@@ -15,11 +14,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Select,
@@ -30,18 +24,15 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/lib/email-service";
-import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
-import { fr } from "date-fns/locale";
 import {
-  CalendarIcon,
   Loader2,
   Phone,
   Send,
   User,
   UserPlus,
-  Users,
+  Users
 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -443,45 +434,11 @@ export default function Inscription() {
                         control={form.control}
                         name="dateOfBirth"
                         render={({ field }) => (
-                          <FormItem className="flex flex-col">
+                          <FormItem>
                             <FormLabel>Date de naissance</FormLabel>
-                            <Popover>
-                              <PopoverTrigger asChild>
-                                <FormControl>
-                                  <Button
-                                    variant={"outline"}
-                                    className={cn(
-                                      "w-full pl-3 text-left font-normal",
-                                      !field.value && "text-muted-foreground"
-                                    )}
-                                  >
-                                    {field.value ? (
-                                      format(field.value, "PPP", { locale: fr })
-                                    ) : (
-                                      <span>Sélectionnez une date</span>
-                                    )}
-                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                  </Button>
-                                </FormControl>
-                              </PopoverTrigger>
-                              <PopoverContent
-                                className="w-auto p-0"
-                                align="start"
-                              >
-                                <Calendar
-                                  mode="single"
-                                  selected={field.value}
-                                  onSelect={field.onChange}
-                                  disabled={(date) =>
-                                    date > new Date() ||
-                                    date < new Date("1940-01-01")
-                                  }
-                                  initialFocus
-                                  locale={fr}
-                                  className="pointer-events-auto"
-                                />
-                              </PopoverContent>
-                            </Popover>
+                            <FormControl>
+                              <Input {...field} type="date" value={field.value ? format(field.value, "dd-MM-yyy") : ""} onChange={field.onChange} />
+                            </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
@@ -536,43 +493,9 @@ export default function Inscription() {
                         render={({ field }) => (
                           <FormItem className="flex flex-col">
                             <FormLabel>Date de naissance</FormLabel>
-                            <Popover>
-                              <PopoverTrigger asChild>
                                 <FormControl>
-                                  <Button
-                                    variant={"outline"}
-                                    className={cn(
-                                      "w-full pl-3 text-left font-normal",
-                                      !field.value && "text-muted-foreground"
-                                    )}
-                                  >
-                                    {field.value ? (
-                                      format(field.value, "PPP", { locale: fr })
-                                    ) : (
-                                      <span>Sélectionnez une date</span>
-                                    )}
-                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                  </Button>
+                                <Input {...field} type="date" value={field.value ? format(field.value, "dd-MM-yyy") : ""} onChange={field.onChange} />
                                 </FormControl>
-                              </PopoverTrigger>
-                              <PopoverContent
-                                className="w-auto p-0"
-                                align="start"
-                              >
-                                <Calendar
-                                  mode="single"
-                                  selected={field.value}
-                                  onSelect={field.onChange}
-                                  disabled={(date) =>
-                                    date > new Date() ||
-                                    date < new Date("2000-01-01")
-                                  }
-                                  initialFocus
-                                  locale={fr}
-                                  className="pointer-events-auto"
-                                />
-                              </PopoverContent>
-                            </Popover>
                             <FormMessage />
                           </FormItem>
                         )}
@@ -684,46 +607,9 @@ export default function Inscription() {
                             render={({ field }) => (
                               <FormItem className="flex flex-col mt-4">
                                 <FormLabel>Date de naissance</FormLabel>
-                                <Popover>
-                                  <PopoverTrigger asChild>
                                     <FormControl>
-                                      <Button
-                                        variant={"outline"}
-                                        className={cn(
-                                          "w-full pl-3 text-left font-normal",
-                                          !field.value &&
-                                            "text-muted-foreground"
-                                        )}
-                                      >
-                                        {field.value ? (
-                                          format(field.value, "PPP", {
-                                            locale: fr,
-                                          })
-                                        ) : (
-                                          <span>Sélectionnez une date</span>
-                                        )}
-                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                      </Button>
+                                    <Input {...field} type="date" value={field.value ? format(field.value, "dd-MM-yyy") : ""} onChange={field.onChange} />
                                     </FormControl>
-                                  </PopoverTrigger>
-                                  <PopoverContent
-                                    className="w-auto p-0"
-                                    align="start"
-                                  >
-                                    <Calendar
-                                      mode="single"
-                                      selected={field.value}
-                                      onSelect={field.onChange}
-                                      disabled={(date) =>
-                                        date > new Date() ||
-                                        date < new Date("2000-01-01")
-                                      }
-                                      initialFocus
-                                      locale={fr}
-                                      className="pointer-events-auto"
-                                    />
-                                  </PopoverContent>
-                                </Popover>
                                 <FormMessage />
                               </FormItem>
                             )}
