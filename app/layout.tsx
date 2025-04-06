@@ -14,7 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FOTA | Reveillons le talent qui somnole en nos petits champions",
+  metadataBase: new URL("https://fota.laclass.dev"),
+  title: {
+    template: "%s | FOTA Cameroun",
+    default: "FOTA | Reveillons le talent qui somnole en nos petits champions",
+  },
   description:
     "FOTA (Fomekong Tennis Academie) est une académie de tennis offrant un cadre de formation idéal pour nos enfants. Inscrivez-vous dès aujourd'hui pour découvrir le potentiel de votre enfant !",
   keywords: "tennis, enfants, formation, FOTA, Fomekong Tennis Academie",

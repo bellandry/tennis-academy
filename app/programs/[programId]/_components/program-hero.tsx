@@ -23,7 +23,7 @@ export const ProgramHero = ({ currentProgram }: ProgramHeroProps) => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="container relative z-10 px-6 py-16 md:py-24 mx-auto text-white animate-on-scroll">

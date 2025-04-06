@@ -35,15 +35,15 @@ export const MainContent = ({ currentProgram }: MainContentProps) => {
         </div>
 
         <div className="animate-on-scroll">
-          <h3 className="text-xl font-semibold mb-4">Horaires proposés</h3>
+          <h3 className="mb-4 text-xl font-semibold">Horaires proposés</h3>
           <div
             className={`overflow-hidden rounded-lg border ${currentProgram.borderColor}`}
           >
             <table className="w-full text-sm">
               <thead className={`${currentProgram.lightColor}`}>
                 <tr>
-                  <th className="px-4 py-3 text-left font-medium">Jour</th>
-                  <th className="px-4 py-3 text-left font-medium">Horaire</th>
+                  <th className="px-4 py-3 font-medium text-left">Jour</th>
+                  <th className="px-4 py-3 font-medium text-left">Horaire</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
@@ -59,7 +59,7 @@ export const MainContent = ({ currentProgram }: MainContentProps) => {
         </div>
 
         <div className="animate-on-scroll">
-          <h3 className="text-xl font-semibold mb-4">
+          <h3 className="mb-4 text-xl font-semibold">
             Pour qui est ce programme?
           </h3>
           <Tabs defaultValue="groupes-age">
@@ -99,17 +99,17 @@ export const MainContent = ({ currentProgram }: MainContentProps) => {
                 {currentProgram.id === "debutants"
                   ? "Acquérir les fondamentaux du tennis, développer la coordination et prendre du plaisir à jouer."
                   : currentProgram.id === "intermediaires"
-                  ? "Améliorer la technique, développer des stratégies de jeu et préparer aux compétitions amicales."
-                  : currentProgram.id === "competition"
-                  ? "Se préparer aux compétitions de haut niveau, perfectionner tous les aspects du jeu et développer une mentalité de compétiteur."
-                  : "Progresser rapidement sur des aspects spécifiques du jeu dans un format intensif et concentré."}
+                    ? "Améliorer la technique, développer des stratégies de jeu et préparer aux compétitions amicales."
+                    : currentProgram.id === "competition"
+                      ? "Se préparer aux compétitions de haut niveau, perfectionner tous les aspects du jeu et développer une mentalité de compétiteur."
+                      : "Progresser rapidement sur des aspects spécifiques du jeu dans un format intensif et concentré."}
               </p>
             </TabsContent>
           </Tabs>
         </div>
 
-        <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 animate-on-scroll">
-          <h3 className="text-xl font-semibold mb-4">
+        <div className="p-6 border border-gray-200 rounded-lg bg-gray-50 animate-on-scroll">
+          <h3 className="mb-4 text-xl font-semibold">
             Prêt à rejoindre notre programme?
           </h3>
           <p className="mb-4">
@@ -117,9 +117,7 @@ export const MainContent = ({ currentProgram }: MainContentProps) => {
             d&apos;informations.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Button
-              className={`${currentProgram.highlightColor} ${currentProgram.highlightTextColor} hover:opacity-90`}
-            >
+            <Button className={`bg-tennis-500 hover:opacity-90`}>
               S&apos;inscrire <ChevronRight size={16} />
             </Button>
             <Link href="/contact">
