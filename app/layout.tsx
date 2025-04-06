@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 256,
-        height: 256,
+        width: 1640,
+        height: 924,
         alt: "Logo de la société Redacok",
       },
     ],
