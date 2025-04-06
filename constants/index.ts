@@ -48,11 +48,9 @@ export const programs = [
       "Plaisir de jouer",
     ],
     color: "bg-blue-50",
-    colorCheck: "bg-blue-300",
     textColor: "text-blue-600",
     borderColor: "border-blue-200",
-    image:
-      "https://images.unsplash.com/photo-1551773148-efc7ebeafb7c?auto=format&fit=crop&w=600&q=80",
+    image: "/eleve3-fota.jpg",
   },
   {
     title: "Cours intermédiaires",
@@ -66,7 +64,6 @@ export const programs = [
       "Matchs supervisés",
     ],
     color: "bg-tennis-50",
-    colorCheck: "bg-tennis-300",
     textColor: "text-tennis-600",
     borderColor: "border-tennis-200",
     image:
@@ -84,7 +81,6 @@ export const programs = [
       "Suivi personnalisé",
     ],
     color: "bg-amber-50",
-    colorCheck: "bg-amber-300",
     textColor: "text-amber-600",
     borderColor: "border-amber-200",
     image:
@@ -102,11 +98,9 @@ export const programs = [
       "Résultats rapides",
     ],
     color: "bg-purple-50",
-    colorCheck: "bg-purple-300",
     textColor: "text-purple-600",
     borderColor: "border-purple-200",
-    image:
-      "https://images.unsplash.com/photo-1582650848997-fcb00b5a72e4?auto=format&fit=crop&w=600&q=80",
+    image: "/eleve2-fota.jpg",
   },
   {
     title: "Cours particuliers",
@@ -120,11 +114,9 @@ export const programs = [
       "Optimisation des performances",
     ],
     color: "bg-green-50",
-    colorCheck: "bg-green-300",
     textColor: "text-green-600",
     borderColor: "border-green-200",
-    image:
-      "https://images.unsplash.com/photo-1582650848997-fcb00b5a72e4?auto=format&fit=crop&w=600&q=80",
+    image: "eleve4-fota.jpg",
   },
 ];
 
@@ -159,8 +151,7 @@ export const programmes = [
     highlightColor: "bg-blue-600",
     highlightTextColor: "text-white",
     lightColor: "bg-blue-100",
-    image:
-      "https://images.unsplash.com/photo-1551773148-efc7ebeafb7c?auhref=format&fit=crop&w=1200&q=80",
+    image: "/eleve3-fota.jpg",
   },
   {
     id: "intermediaires",
@@ -261,8 +252,7 @@ export const programmes = [
     highlightColor: "bg-purple-600",
     highlightTextColor: "text-white",
     lightColor: "bg-purple-100",
-    image:
-      "https://images.unsplash.com/photo-1582650848997-fcb00b5a72e4?auhref=format&fit=crop&w=1200&q=80",
+    image: "/eleve2-fota.jpg",
   },
   {
     id: "particuliers",
@@ -292,8 +282,7 @@ export const programmes = [
     highlightColor: "bg-green-600",
     highlightTextColor: "text-white",
     lightColor: "bg-green-100",
-    image:
-      "https://images.unsplash.com/photo-1575031643824-2c88a047b2a6?auto=format&fit=crop&w=1200&q=80",
+    image: "/eleve4-fota.jpg",
   },
 ];
 
@@ -311,33 +300,33 @@ export type ProgramProps = {
 
 export const testimonials = [
   {
-    name: "Sophie Dubois",
-    role: "Étudiante - 19 ans",
-    image: "https://i.pravatar.cc/150?img=1",
+    name: "Landry BELLA",
+    role: "Joueur amateur - 29 ans",
+    image: "/landry-bella.jpg",
     content:
-      "L'académie m'a aidée à améliorer mon jeu de façon spectaculaire. Grâce aux conseils personnalisés et à l'attention des coachs, j'ai pu intégrer l'équipe de mon université.",
+      "J'ai repris le tennis après 10 ans d'arrêt et l'approche technique des coachs m'a permis de retrouver rapidement mes sensations tout en corrigeant mes mauvaises habitudes.",
+  },
+  {
+    name: "Dominique",
+    role: "Élève - 15 ans",
+    image: "/dominique.png",
+    content:
+      "L'académie m'a aidée à améliorer mon jeu de façon spectaculaire. Grâce aux conseils personnalisés et à l'attention du coach Cyrile, j'ai pu intégrer l'équipe de mon lycée et le représenteer aux jeux FENASCO.",
   },
   {
     name: "Thomas Laurent",
     role: "Parent d'élève",
-    image: "https://i.pravatar.cc/150?img=8",
+    image: "/eleve4-fota.jpg",
     content:
       "Mon fils adore ses cours à l'académie. Les professeurs savent parfaitement adapter leur pédagogie aux enfants tout en les faisant progresser. Un environnement stimulant et bienveillant.",
-  },
-  {
-    name: "Julien Moreau",
-    role: "Joueur amateur - 35 ans",
-    image: "https://i.pravatar.cc/150?img=11",
-    content:
-      "J'ai repris le tennis après 10 ans d'arrêt et l'approche technique des coachs m'a permis de retrouver rapidement mes sensations tout en corrigeant mes mauvaises habitudes.",
   },
 ];
 
 export const stats = [
   { value: "10+", label: "Années d'expérience" },
-  { value: "15", label: "Professeurs certifiés" },
-  { value: "2500+", label: "Élèves formés" },
-  { value: "12", label: "Courts de tennis" },
+  { value: "4", label: "Professeurs certifiés" },
+  { value: "250+", label: "Élèves formés" },
+  { value: "3", label: "Courts de tennis" },
 ];
 
 export type AccomplishmentType = "competition" | "formation" | "evenement";

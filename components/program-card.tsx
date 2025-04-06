@@ -25,22 +25,22 @@ export const ProgramCard = ({ program, index }: ProgramCardProps) => {
           ></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full p-4">
-            <h3 className="text-white text-xl font-bold">{program.title}</h3>
+            <h3 className="text-xl font-bold text-white">{program.title}</h3>
           </div>
         </div>
       </Link>
 
       <div className="p-6">
-        <p className="text-gray-600 mb-4">{program.description}</p>
+        <p className="mb-4 text-gray-600">{program.description}</p>
 
-        <ul className="space-y-2 mb-6">
+        <ul className="mb-6 space-y-2">
           {program.features.map((feature, fIndex) => (
             <li key={fIndex} className="flex items-start gap-2">
               <span
                 className={`mt-1 shrink-0 w-4 h-4 rounded-full ${program.color} flex items-center justify-center`}
               >
                 <span
-                  className={`block w-2 h-2 rounded-full ${program.colorCheck}`}
+                  className={`block w-2 h-2 rounded-full ${program.color}`}
                 />
               </span>
               <span className="text-gray-700">{feature}</span>

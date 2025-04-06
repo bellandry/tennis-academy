@@ -2,6 +2,11 @@
   "name": "fota",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Landry Bella",
+    "website": "https://laclass.dev",
+    "github": "https://github.com/bellandry"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

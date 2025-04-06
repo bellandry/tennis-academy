@@ -2,6 +2,7 @@
 
 import { navLinks } from "@/constants";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
@@ -27,25 +28,26 @@ export default function Header() {
           : "py-5 bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container flex items-center justify-between mx-auto">
         <Link
           href="/"
-          className="flex items-center gap-2 font-display text-2xl font-bold text-tennis-600"
+          className="flex items-center gap-2 text-2xl font-bold font-display text-tennis-600"
         >
-          <span className="relative w-8 h-8">
-            <span className="absolute inset-0 bg-tennis-100 rounded-full"></span>
-            <span className="absolute inset-1 border-2 border-tennis-500 rounded-full"></span>
-          </span>
-          <span>FOTA</span>
+          <Image
+            src="/logo-fota.png"
+            width="100"
+            alt="fota logo"
+            height="100"
+          />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
+        <nav className="items-center hidden space-x-1 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.path}
-              className="px-4 py-2 rounded-md text-gray-600 font-medium hover:text-tennis-600 hover:bg-tennis-50 transition-colors"
+              className="px-4 py-2 font-medium text-gray-600 transition-colors rounded-md hover:text-tennis-600 hover:bg-tennis-50"
             >
               {link.name}
             </Link>
@@ -64,7 +66,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-gray-600 hover:text-tennis-600 focus:outline-none"
+          className="p-2 text-gray-600 md:hidden hover:text-tennis-600 focus:outline-none"
           aria-label={mobileMenuOpen ? "Fermer menu" : "Ouvrir menu"}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,13 +75,13 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg animate-slide-in-bottom py-4">
-          <nav className="flex flex-col space-y-1 px-6">
+        <div className="absolute left-0 right-0 py-4 bg-white shadow-lg md:hidden top-full animate-slide-in-bottom">
+          <nav className="flex flex-col px-6 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.path}
-                className="px-4 py-3 rounded-md text-gray-600 font-medium hover:text-tennis-600 hover:bg-tennis-50 transition-colors"
+                className="px-4 py-3 font-medium text-gray-600 transition-colors rounded-md hover:text-tennis-600 hover:bg-tennis-50"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
@@ -92,7 +94,7 @@ export default function Header() {
             >
               <Link
                 href="/inscription"
-                className="px-4 py-3 mt-2 btn-tennis text-center"
+                className="px-4 py-3 mt-2 text-center btn-tennis"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 S&apos;inscrire
