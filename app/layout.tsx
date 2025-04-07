@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "FOTA | Reveillons le talent qui somnole en nos petits champions",
     description:
       "Rejoignez FOTA pour une formation de tennis exceptionnelle pour vos enfants.",
-    url: "https://votre-site.com",
+    url: "https://fota.laclass.dev",
     images: [
       {
         url: "/og-image.png",

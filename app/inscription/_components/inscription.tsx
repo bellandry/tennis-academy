@@ -97,7 +97,7 @@ export function Inscription() {
       phone: "",
       additionalInfo: "",
       acceptTerms: false,
-      contactPreference: "email",
+      contactPreference: "whatsapp",
     },
   });
 
@@ -438,12 +438,14 @@ export function Inscription() {
                               <Input
                                 {...field}
                                 type="date"
+                                onChange={(e) => {
+                                  field.onChange(new Date(e.target.value));
+                                }}
                                 value={
                                   field.value
-                                    ? format(field.value, "dd-MM-yyy")
+                                    ? format(field.value, "yyyy-MM-dd")
                                     : ""
                                 }
-                                onChange={field.onChange}
                               />
                             </FormControl>
                             <FormMessage />
@@ -504,12 +506,14 @@ export function Inscription() {
                               <Input
                                 {...field}
                                 type="date"
+                                onChange={(e) => {
+                                  field.onChange(new Date(e.target.value));
+                                }}
                                 value={
                                   field.value
-                                    ? format(field.value, "dd-MM-yyy")
+                                    ? format(field.value, "yyyy-MM-dd")
                                     : ""
                                 }
-                                onChange={field.onChange}
                               />
                             </FormControl>
                             <FormMessage />
@@ -627,12 +631,14 @@ export function Inscription() {
                                   <Input
                                     {...field}
                                     type="date"
+                                    onChange={(e) => {
+                                      field.onChange(new Date(e.target.value));
+                                    }}
                                     value={
                                       field.value
-                                        ? format(field.value, "dd-MM-yyy")
+                                        ? format(field.value, "yyyy-MM-dd")
                                         : ""
                                     }
-                                    onChange={field.onChange}
                                   />
                                 </FormControl>
                                 <FormMessage />

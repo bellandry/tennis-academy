@@ -292,7 +292,6 @@ export type ProgramProps = {
   description: string;
   features: string[];
   color: string;
-  colorCheck: string;
   textColor: string;
   borderColor: string;
   image: string;
