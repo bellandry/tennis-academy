@@ -92,7 +92,7 @@ export function InfosComponent() {
               </p>
               <div className="mt-auto w-full">
                 <a
-                  href="https://maps.google.com/?q=5.4748,10.4118"
+                  href="https://maps.app.goo.gl/54LrNc2LbTV1HpRu6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-tennis w-full flex items-center justify-center"
