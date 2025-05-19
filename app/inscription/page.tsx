@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Inscrivez-vous dès aujourd'hui à FOTA Cameroun, l'académie de tennis pour enfants, adultes et seniors. Choisissez votre niveau : débutant, intermédiaire, expert ou compétition.",
   keywords:
-    "inscription tennis, académie tennis Cameroun, rejoindre FOTA, inscription enfants tennis, cours tennis adultes, tennis compétition, sparring tennis, formation tennis Yaoundé",
+    "inscription tennis, académie tennis Cameroun, rejoindre FOTA, inscription enfants tennis, cours tennis adultes, tennis compétition, sparring tennis, formation tennis Bafoussam",
   openGraph: {
     title: "Inscription | Rejoignez FOTA Cameroun",
     description:

@@ -53,7 +53,7 @@ export default function ContactInfo() {
               Bafoussam, Cameroun
             </p>
             <a
-              href="https://goo.gl/maps/123"
+              href="https://maps.app.goo.gl/54LrNc2LbTV1HpRu6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center mt-2 font-medium text-tennis-600 hover:underline"

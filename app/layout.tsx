@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description:
       "Académie de tennis pour tous les âges. Cours par niveau, sparrings et préparation à la compétition. Découvrez FOTA dès maintenant.",
     images: ["/og-image.png"],
-    site: "@FOTAtennis", // à modifier si tu n'as pas encore ce compte
+    site: "@FOTACameroun",
   },
   authors: {
     name: "Landry Bella | Full-Stack Developer",
