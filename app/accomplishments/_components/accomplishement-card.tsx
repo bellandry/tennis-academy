@@ -11,15 +11,15 @@ import { Accomplishment } from "@/constants";
 import { Calendar, ChevronRight, Trophy, User } from "lucide-react";
 import Image from "next/image";
 
-export type AccomplishementCardProps = {
+export type AccomplishmentCardProps = {
   accomplisment: Accomplishment;
   index: number;
 };
 
-export const AccomplishementCard = ({
+export const AccomplishmentCard = ({
   accomplisment,
   index,
-}: AccomplishementCardProps) => {
+}: AccomplishmentCardProps) => {
   return (
     <Card
       key={accomplisment.id}

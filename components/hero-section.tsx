@@ -29,6 +29,7 @@ export default function HeroSection() {
   return (
     <section
       id="accueil"
+      aria-label="Section d'accueil Fomekong Tennis Academy"
       className="relative flex items-center justify-center min-h-screen pt-16 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
@@ -40,9 +41,9 @@ export default function HeroSection() {
       <div className="container relative z-10 px-6 py-16 mx-auto md:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-tennis-100 text-tennis-600 font-medium text-sm mb-6 animate-fade-in">
+            <h2 className="inline-block px-4 py-1.5 rounded-full bg-tennis-100 text-tennis-600 font-medium text-sm mb-6 animate-fade-in">
               Bienvenue à Fomekong Tennis Academy
-            </span>
+            </h2>
 
             <h1
               className="mb-6 text-5xl font-bold md:text-7xl animate-fade-in"
@@ -70,7 +71,11 @@ export default function HeroSection() {
                 size="lg"
                 className="w-full md:w-1/3 bg-tennis hover:bg-tennis-600"
               >
-                <Link href="#contact" className="btn-tennis">
+                <Link
+                  href="#contact"
+                  className="btn-tennis"
+                  title="Aller à la section inscription"
+                >
                   S&apos;inscrire maintenant
                 </Link>
               </Button>
@@ -79,7 +84,11 @@ export default function HeroSection() {
                 size="lg"
                 className="w-full md:w-1/3 bg-tennis-50 text-tennis hover:bg-tennis-600 hover:text-tennis-50"
               >
-                <Link href="#programs" className="btn-tennis-outline">
+                <Link
+                  href="#programs"
+                  className="btn-tennis-outline"
+                  title="Consulter nos programmes de formation"
+                >
                   Découvrir nos programmes
                 </Link>
               </Button>

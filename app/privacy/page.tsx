@@ -1,12 +1,47 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Politique de Confidentialité",
+  description:
+    "Prenez connaissance de la manière dont FOTA Cameroun collecte, utilise, protège et partage vos données personnelles. Notre politique de confidentialité respecte votre vie privée.",
+  keywords:
+    "politique de confidentialité FOTA, données personnelles, vie privée, RGPD, confidentialité tennis, protection données utilisateurs, FOTA Cameroun",
+  openGraph: {
+    title: "Politique de Confidentialité | FOTA Cameroun",
+    description:
+      "FOTA Cameroun s'engage à protéger vos informations personnelles. Lisez notre politique pour en savoir plus sur notre gestion des données.",
+    url: "https://fota.laclass.dev/privacy",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1640,
+        height: 924,
+        alt: "Politique de confidentialité FOTA Cameroun",
+      },
+    ],
+    type: "article",
+    siteName: "FOTA Cameroun",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Confidentialité & Données personnelles | FOTA Cameroun",
+    description:
+      "Transparence et sécurité : découvrez notre politique de confidentialité et comment nous protégeons vos informations personnelles.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://fota.laclass.dev/privacy",
+  },
+};
 
 const Privacy = () => {
   return (
     <>
       <Header />
-      <div className="container pt-24 pb-16">
+      <div className="max-w-5xl mx-auto px-2 pt-24 pb-16">
         <h1>Politique de Confidentialité de FOTA Cameroun</h1>
         <p>Date de dernière mise à jour : 06/04/2025</p>
         <p>

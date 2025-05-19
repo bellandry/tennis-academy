@@ -17,30 +17,48 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://fota.laclass.dev"),
   title: {
     template: "%s | FOTA Cameroun",
-    default: "FOTA | Reveillons le talent qui somnole en nos petits champions",
+    default: "FOTA Cameroun | Académie de tennis pour tous les âges et niveaux",
   },
   description:
-    "FOTA (Fomekong Tennis Academie) est une académie de tennis offrant un cadre de formation idéal pour nos enfants. Inscrivez-vous dès aujourd'hui pour découvrir le potentiel de votre enfant !",
-  keywords: "tennis, enfants, formation, FOTA, Fomekong Tennis Academie",
+    "FOTA est une académie de tennis ouverte aux enfants, adultes et seniors. Cours pour débutants, intermédiaires, experts et compétiteurs. Encadrement professionnel, sparring partenaires et progression assurée.",
+  keywords:
+    "tennis Cameroun, académie tennis, cours de tennis enfants, cours de tennis adultes, tennis débutant, tennis expert, sparring, compétition, FOTA",
   robots: "index, follow",
   openGraph: {
-    title: "FOTA | Reveillons le talent qui somnole en nos petits champions",
+    title: "FOTA Cameroun | Académie de tennis complète pour tous les niveaux",
     description:
-      "Rejoignez FOTA pour une formation de tennis exceptionnelle pour vos enfants.",
+      "Rejoignez FOTA, une académie de tennis professionnelle ouverte à tous les âges et niveaux. Entraînez-vous avec les meilleurs coachs au Cameroun.",
     url: "https://fota.laclass.dev",
     images: [
       {
         url: "/og-image.png",
         width: 1640,
         height: 924,
-        alt: "Logo de la société Redacok",
+        alt: "Académie de tennis FOTA Cameroun",
       },
     ],
+    type: "website",
+    siteName: "FOTA Cameroun",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FOTA Cameroun | Tennis pour enfants, adultes et seniors",
+    description:
+      "Académie de tennis pour tous les âges. Cours par niveau, sparrings et préparation à la compétition. Découvrez FOTA dès maintenant.",
+    images: ["/og-image.png"],
+    site: "@FOTAtennis", // à modifier si tu n'as pas encore ce compte
   },
   authors: {
     name: "Landry Bella | Full-Stack Developer",
     url: "https://laclass.dev",
   },
+  alternates: {
+    canonical: "https://fota.laclass.dev",
+  },
+};
+
+export const viewport = {
+  themeColor: "#008000",
 };
 
 export default function RootLayout({

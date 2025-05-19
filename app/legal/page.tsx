@@ -1,12 +1,47 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Mentions Légales | FOTA Cameroun",
+  description:
+    "Consultez les mentions légales de FOTA Cameroun : éditeur, hébergeur, propriété intellectuelle, responsabilité et droits liés au site.",
+  keywords:
+    "mentions légales, FOTA Cameroun, éditeur du site, hébergeur, informations légales, propriété intellectuelle, site tennis Cameroun",
+  openGraph: {
+    title: "Mentions Légales | FOTA Cameroun",
+    description:
+      "Mentions légales du site FOTA Cameroun : éditeur, hébergeur, droits d’auteur et obligations légales.",
+    url: "https://fota.laclass.dev/legal",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1640,
+        height: 924,
+        alt: "Mentions légales FOTA Cameroun",
+      },
+    ],
+    type: "article",
+    siteName: "FOTA Cameroun",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mentions Légales | FOTA Cameroun",
+    description:
+      "Retrouvez toutes les informations légales relatives à l’éditeur, l’hébergement et les droits du site FOTA Cameroun.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://fota.laclass.dev/legal",
+  },
+};
 
 const Legal = () => {
   return (
     <>
       <Header />
-      <div className="container pt-24 pb-16">
+      <div className="max-w-5xl mx-auto pt-24 pb-16 px-2">
         <h1>Mentions Légales</h1>
         <section>
           <h2>1. Identification de l&apos;éditeur du site web</h2>

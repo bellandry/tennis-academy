@@ -1,12 +1,47 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Conditions d’Utilisation",
+  description:
+    "Prenez connaissance des conditions générales d'utilisation du site FOTA Cameroun. Découvrez les règles encadrant l’utilisation de nos services et contenus.",
+  keywords:
+    "conditions d'utilisation, CGU FOTA, règles d'utilisation site, mentions légales, droits et responsabilités, FOTA Cameroun",
+  openGraph: {
+    title: "Conditions Générales d’Utilisation | FOTA Cameroun",
+    description:
+      "Lisez nos conditions d'utilisation pour comprendre les droits, responsabilités et engagements liés à l’utilisation du site FOTA Cameroun.",
+    url: "https://fota.laclass.dev/condition",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1640,
+        height: 924,
+        alt: "Conditions d’utilisation FOTA Cameroun",
+      },
+    ],
+    type: "article",
+    siteName: "FOTA Cameroun",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Conditions d’Utilisation | FOTA Cameroun",
+    description:
+      "Découvrez les conditions d'utilisation du site FOTA Cameroun. Informez-vous sur les règles d'accès, d'inscription et de navigation.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://fota.laclass.dev/condition",
+  },
+};
 
 function Condition() {
   return (
     <>
       <Header />
-      <div className="container pt-24 pb-16">
+      <div className="max-w-5xl mx-auto px-2 pt-24 pb-16">
         <h1>Conditions d&apos;Utilisation de FOTA Cameroun</h1>
 
         <h2>1. Acceptation des conditions</h2>

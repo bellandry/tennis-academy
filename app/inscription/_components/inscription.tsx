@@ -26,7 +26,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/lib/email-service";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
-import { Loader2, Phone, Send, User, UserPlus, Users } from "lucide-react";
+import { Loader2, Phone, User, UserPlus, Users } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -251,11 +251,13 @@ export function Inscription() {
           <div className="w-full p-2 mx-auto md:p-4">
             <div className="mb-8 text-center">
               <h1 className="mb-4 text-3xl font-bold md:text-4xl">
-                Inscription à FOTA
+                Inscription à FOTA – Académie de Tennis
               </h1>
-              <p className="text-gray-600">
-                Remplissez ce formulaire pour vous inscrire ou inscrire vos
-                enfants à l&apos;un de nos programmes.
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Remplissez ce formulaire pour rejoindre l&apos;une des
+                meilleures académies de tennis du Cameroun. Que vous soyez
+                débutant ou joueur confirmé, FOTA vous accompagne vers
+                l&apos;excellence
               </p>
             </div>
 
@@ -763,7 +765,7 @@ export function Inscription() {
                             defaultValue={field.value}
                             className="flex flex-col space-y-1"
                           >
-                            <FormItem className="flex items-center space-x-3 space-y-0">
+                            {/* <FormItem className="flex items-center space-x-3 space-y-0">
                               <FormControl>
                                 <RadioGroupItem value="email" />
                               </FormControl>
@@ -773,7 +775,7 @@ export function Inscription() {
                                   Email
                                 </span>
                               </FormLabel>
-                            </FormItem>
+                            </FormItem> */}
                             <FormItem className="flex items-center space-x-3 space-y-0">
                               <FormControl>
                                 <RadioGroupItem value="whatsapp" />
