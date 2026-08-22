@@ -28,7 +28,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
 import { Loader2, Phone, User, UserPlus, Users } from "lucide-react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -101,7 +101,10 @@ export function Inscription() {
     },
   });
 
-  const inscriptionType = form.watch("inscriptionType");
+  const inscriptionType = useWatch({
+    control: form.control,
+    name: "inscriptionType",
+  });
 
   // Gérer l'ajout d'un enfant
   const handleAddChild = () => {

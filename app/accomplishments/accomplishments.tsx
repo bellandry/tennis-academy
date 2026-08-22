@@ -46,11 +46,6 @@ export function Accomplishments() {
     return () => window.removeEventListener("scroll", animateOnScroll);
   }, []);
 
-  useEffect(() => {
-    // Réinitialiser la page quand le filtre change
-    setCurrentPage(1);
-  }, [filter]);
-
   return (
     <>
       <Header />
@@ -92,9 +87,10 @@ export function Accomplishments() {
                 <Filter size={20} className="text-gray-500" />
                 <Tabs
                   value={filter}
-                  onValueChange={(value) =>
-                    setFilter(value as AccomplishmentType | "all")
-                  }
+                  onValueChange={(value) => {
+                    setFilter(value as AccomplishmentType | "all");
+                    setCurrentPage(1);
+                  }}
                 >
                   <TabsList>
                     <TabsTrigger value="all">Tous</TabsTrigger>
