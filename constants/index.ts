@@ -5,7 +5,7 @@ export const navLinks = [
   { name: "A propos", path: "/#a-propos" },
   { name: "Programmes", path: "/programs/debutants" },
   { name: "Accomplissements", path: "/accomplishments" },
-  { name: "Contact", path: "/#contact" },
+  { name: "Contact", path: "/contact" },
 ];
 
 export const features = [
