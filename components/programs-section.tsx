@@ -15,7 +15,7 @@ export default function ProgramsSection() {
   }, []);
 
   return (
-    <section id="programs" className="relative overflow-hidden bg-white py-24 md:py-32">
+    <section id="programs" className="relative overflow-hidden bg-[#f8fbf8] py-24 md:py-32">
       <div className="container relative mx-auto max-w-7xl px-6 md:px-8">
         <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
@@ -39,10 +39,13 @@ export default function ProgramsSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center md:justify-end">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-[1.5rem] bg-[#073f3c] px-6 py-5 text-white shadow-xl shadow-[#073f3c]/10 sm:flex-row md:px-8">
+          <p className="text-sm font-medium text-white/80">
+            Besoin d&apos;aide pour choisir votre niveau ?
+          </p>
           <Link
             href="/programs/debutants"
-            className="inline-flex items-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 transition-colors hover:border-tennis-500 hover:bg-tennis-50 hover:text-tennis-700"
+            className="inline-flex items-center rounded-full bg-[#d9ef63] px-5 py-3 text-sm font-bold text-[#073f3c] transition-colors hover:bg-[#e7fa8c]"
           >
             Voir tous les programmes
             <ArrowUpRight className="ml-2 size-4" />
