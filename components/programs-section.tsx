@@ -1,19 +1,9 @@
-"use client";
-
 import { programs } from "@/constants";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { useEffect } from "react";
-import { animateOnScroll } from "../lib/animations";
 import { ProgramCard } from "./program-card";
 
 export default function ProgramsSection() {
-  useEffect(() => {
-    animateOnScroll();
-    window.addEventListener("scroll", animateOnScroll);
-    return () => window.removeEventListener("scroll", animateOnScroll);
-  }, []);
-
   return (
     <section id="programs" className="relative overflow-hidden bg-[#f8fbf8] py-24 md:py-32">
       <div className="container relative mx-auto max-w-7xl px-6 md:px-8">
@@ -27,7 +17,7 @@ export default function ProgramsSection() {
               <span className="block text-tennis-600">façon de jouer.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-base leading-7 text-slate-500 md:text-right">
+          <p className="max-w-sm text-base leading-7 text-slate-600 md:text-right">
             Du premier échange à la préparation compétition, choisissez le cadre
             qui correspond à votre rythme et à vos objectifs.
           </p>

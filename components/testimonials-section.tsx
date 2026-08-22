@@ -4,22 +4,17 @@ import { testimonials } from "@/constants";
 import { ArrowRight, ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { animateOnScroll } from "../lib/animations";
 import { Stats } from "./stats";
 
 export default function TestimonialsSection() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
-    animateOnScroll();
-    window.addEventListener("scroll", animateOnScroll);
-
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % testimonials.length);
     }, 6000);
 
     return () => {
-      window.removeEventListener("scroll", animateOnScroll);
       clearInterval(interval);
     };
   }, []);
@@ -47,7 +42,7 @@ export default function TestimonialsSection() {
               <span className="block text-tennis-600">échange après échange.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-base leading-7 text-slate-500 md:text-right">
+          <p className="max-w-sm text-base leading-7 text-slate-600 md:text-right">
             Une méthode exigeante, un regard attentif et des progrès que nos
             joueurs peuvent réellement ressentir.
           </p>
@@ -73,7 +68,7 @@ export default function TestimonialsSection() {
 
           <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-900/5 md:p-10 animate-on-scroll">
             <div className="mb-7 flex items-center justify-between">
-              <div className="flex gap-1" aria-label="5 étoiles">
+              <div className="flex gap-1" role="img" aria-label="5 étoiles">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star key={index} className="size-4 fill-amber-400 text-amber-400" />
                 ))}
@@ -97,7 +92,7 @@ export default function TestimonialsSection() {
                 />
                 <div>
                   <p className="font-semibold text-slate-950">{activeTestimonial.name}</p>
-                  <p className="text-sm text-slate-500">{activeTestimonial.role}</p>
+                  <p className="text-sm text-slate-600">{activeTestimonial.role}</p>
                 </div>
               </div>
             </div>
@@ -137,9 +132,9 @@ export default function TestimonialsSection() {
 
         <Stats />
 
-        <div className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-slate-500">
+        <div className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-slate-600">
           <span>Vous avez un objectif en tête ?</span>
-          <a href="#contact" className="inline-flex items-center text-tennis-700 hover:text-tennis-900">
+          <a href="/contact" className="inline-flex items-center text-tennis-700 transition-colors hover:text-tennis-900">
             Parlons-en <ArrowRight className="ml-1 size-4" />
           </a>
         </div>

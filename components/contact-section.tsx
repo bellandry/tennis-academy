@@ -1,19 +1,9 @@
-"use client";
-
 import { ArrowUpRight, MessageCircle } from "lucide-react";
-import { useEffect } from "react";
-import { animateOnScroll } from "../lib/animations";
 import ContactForm from "./contact/contact-form";
 import ContactInfo from "./contact/contact-info";
 import OpeningHours from "./contact/opening-hours";
 
 export default function ContactSection() {
-  useEffect(() => {
-    animateOnScroll();
-    window.addEventListener("scroll", animateOnScroll);
-    return () => window.removeEventListener("scroll", animateOnScroll);
-  }, []);
-
   return (
     <section id="contact" className="bg-white py-24 md:py-32">
       <div className="container mx-auto max-w-7xl px-6 md:px-8">
@@ -27,7 +17,7 @@ export default function ContactSection() {
               <span className="block text-tennis-600">commence ici.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-base leading-7 text-slate-500 md:text-right">
+          <p className="max-w-sm text-base leading-7 text-slate-600 md:text-right">
             Une question sur un programme, les horaires ou votre niveau ? Notre
             équipe vous répond avec plaisir.
           </p>
@@ -43,7 +33,7 @@ export default function ContactSection() {
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-tennis-700">
                   Contact direct
                 </p>
-                <p className="mt-1 text-sm text-slate-500">Nous revenons vers vous rapidement.</p>
+                <p className="mt-1 text-sm text-slate-600">Nous revenons vers vous rapidement.</p>
               </div>
             </div>
             <ContactForm />
