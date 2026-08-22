@@ -1,7 +1,7 @@
 "use client";
 
 import { testimonials } from "@/constants";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { animateOnScroll } from "../lib/animations";
@@ -32,116 +32,117 @@ export default function TestimonialsSection() {
     setActiveSlide((prev) => (prev + 1) % testimonials.length);
   };
 
+  const activeTestimonial = testimonials[activeSlide];
+
   return (
-    <section id="témoignages" className="section-padding relative">
-      <div className="container mx-auto px-6 md:px-8 relative">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-tennis-100 text-tennis-600 font-medium text-sm mb-4 animate-on-scroll">
-            Témoignages
-          </span>
-          <h2 className="section-heading animate-on-scroll">
-            Ce que disent <span className="text-gradient">nos élèves</span>
-          </h2>
-          <p className="section-subheading animate-on-scroll">
-            Découvrez l&apos;expérience de ceux qui nous font confiance pour
-            leur progression dans le tennis.
+    <section id="témoignages" className="bg-[#f3f7f2] py-24 md:py-32">
+      <div className="container mx-auto max-w-7xl px-6 md:px-8">
+        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-tennis-700">
+              La communauté FOTA
+            </p>
+            <h2 className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 md:text-6xl">
+              La confiance se construit
+              <span className="block text-tennis-600">échange après échange.</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-base leading-7 text-slate-500 md:text-right">
+            Une méthode exigeante, un regard attentif et des progrès que nos
+            joueurs peuvent réellement ressentir.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto mb-20 animate-on-scroll">
-          <div className="relative bg-white rounded-2xl shadow-subtle-lg p-8">
-            {/* Decorative elements */}
-            <div className="absolute -top-3 -left-3 w-20 h-20 bg-tennis-100 rounded-lg -z-10"></div>
-            <div className="absolute -bottom-3 -right-3 w-16 h-16 border-2 border-tennis-300 rounded-lg -z-10"></div>
+        <div className="mb-16 grid items-stretch gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="relative min-h-[22rem] overflow-hidden rounded-[1.75rem] bg-[#073f3c] p-8 text-white md:p-10 animate-on-scroll">
+            <Quote className="absolute right-8 top-8 size-16 text-[#59c7b7]/25" />
+            <p className="relative text-xs font-semibold uppercase tracking-[0.2em] text-[#d9ef63]">
+              Ils jouent, ils progressent
+            </p>
+            <div className="absolute bottom-8 left-8 right-8 md:left-10 md:right-10">
+              <p className="max-w-md text-2xl font-semibold leading-tight md:text-3xl">
+                &quot;Le meilleur entraînement est celui qui vous donne envie de
+                revenir demain.&quot;
+              </p>
+              <div className="mt-8 flex items-center gap-3 text-sm text-white/70">
+                <span className="h-px w-10 bg-[#59c7b7]" />
+                L&apos;approche FOTA
+              </div>
+            </div>
+          </div>
 
-            <div className="flex flex-col items-center">
-              <div className="flex mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={20}
-                    className="text-yellow-400 fill-current"
-                  />
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-xl shadow-slate-900/5 md:p-10 animate-on-scroll">
+            <div className="mb-7 flex items-center justify-between">
+              <div className="flex gap-1" aria-label="5 étoiles">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} className="size-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
+              <span className="text-sm font-semibold text-slate-400">
+                0{activeSlide + 1} / 0{testimonials.length}
+              </span>
+            </div>
 
-              <div
-                className="relative w-full overflow-hidden"
-                style={{ minHeight: "200px" }}
-              >
+            <div className="min-h-[13rem]">
+              <p className="max-w-2xl text-xl leading-8 text-slate-700 md:text-2xl md:leading-9">
+                &quot;{activeTestimonial.content}&quot;
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <Image
+                  src={activeTestimonial.image}
+                  alt={activeTestimonial.name}
+                  width={56}
+                  height={56}
+                  className="size-14 rounded-full border-2 border-tennis-100 object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-slate-950">{activeTestimonial.name}</p>
+                  <p className="text-sm text-slate-500">{activeTestimonial.role}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-7 flex items-center justify-between border-t border-slate-100 pt-5">
+              <div className="flex gap-2">
                 {testimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 flex flex-col items-center text-center transition-opacity duration-500 ${
-                      activeSlide === index
-                        ? "opacity-100 z-10"
-                        : "opacity-0 z-0"
-                    }`}
-                  >
-                    <p className="text-xl text-gray-700 italic mb-8">
-                      <q>{testimonial.content}</q>
-                    </p>
-
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-tennis-200">
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                      <div className="text-left">
-                        <h4 className="font-bold text-gray-800">
-                          {testimonial.name}
-                        </h4>
-                        <p className="text-gray-500 text-sm">
-                          {testimonial.role}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex justify-center gap-2 mt-8">
-                {testimonials.map((_, index) => (
                   <button
-                    key={index}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      activeSlide === index ? "bg-tennis-500" : "bg-gray-300"
+                    key={testimonial.name}
+                    className={`h-2 rounded-full transition-all ${
+                      activeSlide === index ? "w-8 bg-tennis-600" : "w-2 bg-slate-200"
                     }`}
                     onClick={() => setActiveSlide(index)}
-                    aria-label={`Voir témoignage ${index + 1}`}
+                    aria-label={`Voir le témoignage ${index + 1}`}
                   />
                 ))}
               </div>
-            </div>
-
-            <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-6">
-              <button
-                onClick={handlePrev}
-                className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-tennis-600 focus:outline-none focus:ring-2 focus:ring-tennis-500 transition-colors"
-                aria-label="Témoignage précédent"
-              >
-                <ChevronLeft size={24} />
-              </button>
-            </div>
-
-            <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-6">
-              <button
-                onClick={handleNext}
-                className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-700 hover:text-tennis-600 focus:outline-none focus:ring-2 focus:ring-tennis-500 transition-colors"
-                aria-label="Témoignage suivant"
-              >
-                <ChevronRight size={24} />
-              </button>
+              <div className="flex gap-2">
+                <button
+                  onClick={handlePrev}
+                  className="flex size-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition-colors hover:border-tennis-500 hover:text-tennis-700"
+                  aria-label="Témoignage précédent"
+                >
+                  <ChevronLeft className="size-5" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="flex size-10 items-center justify-center rounded-full bg-[#075e58] text-white transition-colors hover:bg-[#064a46]"
+                  aria-label="Témoignage suivant"
+                >
+                  <ChevronRight className="size-5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
         <Stats />
+
+        <div className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-slate-500">
+          <span>Vous avez un objectif en tête ?</span>
+          <a href="#contact" className="inline-flex items-center text-tennis-700 hover:text-tennis-900">
+            Parlons-en <ArrowRight className="ml-1 size-4" />
+          </a>
+        </div>
       </div>
     </section>
   );
