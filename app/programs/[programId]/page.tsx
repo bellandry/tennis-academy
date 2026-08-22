@@ -1,86 +1,69 @@
-"use client";
-
-import NotFoundPage from "@/app/not-found";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { programmes } from "@/constants";
-import { animateOnScroll } from "@/lib/animations";
-import { useParams } from "next/navigation";
-import { useEffect } from "react";
-import { InfoCards } from "./_components/info-cards";
-import { MainContent } from "./_components/main-content";
-import { NavigationPrograms } from "./_components/navigation-programs";
-import { OtherPrograms } from "./_components/other-programs";
-import { ProgramHero } from "./_components/program-hero";
+import { SITE_URL } from "@/lib/site";
+import { ProgrammesPage } from "./_components/programmes-page";
 
-export default function Programmes() {
-  const { programId } = useParams();
+export function generateStaticParams() {
+  return programmes.map(({ id }) => ({ programId: id }));
+}
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    animateOnScroll();
-    window.addEventListener("scroll", animateOnScroll);
-    return () => window.removeEventListener("scroll", animateOnScroll);
-  }, [programId]);
+type ProgrammesRouteProps = {
+  params: Promise<{
+    programId: string;
+  }>;
+};
 
-  const currentProgram = programmes.find((p) => p.id === programId);
+function getProgram(programId: string) {
+  return programmes.find((program) => program.id === programId);
+}
 
-  if (!currentProgram) {
-    return <NotFoundPage />;
+export async function generateMetadata({
+  params,
+}: ProgrammesRouteProps): Promise<Metadata> {
+  const { programId } = await params;
+  const program = getProgram(programId);
+
+  if (!program) {
+    return {
+      title: "Programme introuvable",
+      robots: { index: false, follow: true },
+    };
   }
 
-  const infoDatas = {
-    duration: currentProgram.duration,
-    frequency: currentProgram.frequency,
-    maxGroupSize: String(currentProgram.maxGroupSize),
-    lightColor: currentProgram.lightColor,
-    price: currentProgram.price,
-    textColor: currentProgram.textColor,
-    color: currentProgram.color,
-    borderColor: currentProgram.borderColor,
-    features: currentProgram.features,
+  const url = `${SITE_URL}/programs/${program.id}`;
+
+  return {
+    title: `${program.title} | Cours de tennis à Bafoussam`,
+    description: program.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${program.title} | FOTA Cameroun`,
+      description: program.description,
+      url,
+      type: "website",
+      images: [
+        {
+          url: program.image,
+          alt: `${program.title} — Fomekong Tennis Academy`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${program.title} | FOTA Cameroun`,
+      description: program.description,
+      images: [program.image],
+    },
   };
+}
 
-  const mainDatas = {
-    id: currentProgram.id,
-    longDescription: currentProgram.longDescription,
-    ageGroups: currentProgram.ageGroups,
-    maxGroupSize: String(currentProgram.maxGroupSize),
-    highlightTextColor: currentProgram.highlightTextColor,
-    highlightColor: currentProgram.highlightColor,
-    lightColor: currentProgram.lightColor,
-    textColor: currentProgram.textColor,
-    color: currentProgram.color,
-    borderColor: currentProgram.borderColor,
-    schedule: currentProgram.schedule,
-  };
+export default async function Programmes({ params }: ProgrammesRouteProps) {
+  const { programId } = await params;
 
-  return (
-    <>
-      <main className="pt-20">
-        {/* Hero for the program */}
-        <ProgramHero currentProgram={currentProgram} />
+  if (!getProgram(programId)) {
+    notFound();
+  }
 
-        {/* Navigation between programs */}
-        <NavigationPrograms
-          programs={programmes}
-          programId={currentProgram.id}
-        />
-
-        {/* Program details */}
-        <section id="details" className="section-padding">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Left column: Info cards */}
-              <InfoCards currentProgram={infoDatas} />
-
-              {/* Right column: Main content */}
-              <MainContent currentProgram={mainDatas} />
-            </div>
-          </div>
-        </section>
-
-        {/* Other programs section */}
-        <OtherPrograms programId={currentProgram.id} />
-      </main>
-    </>
-  );
+  return <ProgrammesPage programId={programId} />;
 }

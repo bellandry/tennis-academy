@@ -3,6 +3,8 @@ import { ChevronRight, Facebook, Instagram, YoutubeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 const socialIcons = {
   facebook: {
     icon: <Facebook className="size-4" />,
@@ -58,9 +60,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
+            <h3 className="mb-4 text-lg font-semibold text-white">
               Liens rapides
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {navLinks.map((item) => (
                 <li key={item.name}>
@@ -77,9 +79,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
+            <h3 className="mb-4 text-lg font-semibold text-white">
               Nos services
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {programs.map((program) => (
                 <li key={program.slug}>
@@ -96,9 +98,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
+            <h3 className="mb-4 text-lg font-semibold text-white">
               Newsletter
-            </h4>
+            </h3>
             <p className="mb-4 text-gray-400">
               Abonnez-vous pour recevoir nos dernières actualités et offres
               spéciales.
@@ -115,7 +117,7 @@ export default function Footer() {
               </div>
               <button
                 type="submit"
-                className="w-full py-3 font-medium text-white transition-colors rounded-lg bg-tennis-600 hover:bg-tennis-700"
+                className="w-full py-3 font-medium text-white transition-colors rounded-lg bg-tennis-700 hover:bg-tennis-800"
               >
                 S&apos;abonner
               </button>
@@ -124,27 +126,27 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between pt-8 border-t border-gray-800 md:flex-row">
-          <p className="mb-4 text-sm text-gray-500 md:mb-0">
-            &copy; {new Date().getFullYear()} Tennis Academy. Tous droits
+          <p className="mb-4 text-sm text-gray-400 md:mb-0">
+            &copy; {CURRENT_YEAR} Tennis Academy. Tous droits
             réservés.
           </p>
 
           <div className="flex space-x-6">
             <Link
               href="/privacy"
-              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
+              className="text-sm text-gray-400 transition-colors hover:text-white"
             >
               Politique de confidentialité
             </Link>
             <Link
               href="/condition"
-              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
+              className="text-sm text-gray-400 transition-colors hover:text-white"
             >
               Conditions d&apos;utilisation
             </Link>
             <Link
               href="/legal"
-              className="text-sm text-gray-500 transition-colors hover:text-gray-300"
+              className="text-sm text-gray-400 transition-colors hover:text-white"
             >
               Mentions légales
             </Link>

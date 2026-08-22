@@ -8,7 +8,7 @@ export default function ContactInfo() {
       <div className="space-y-6">
         <div className="flex items-start gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-lg shrink-0 bg-tennis-100">
-            <Phone size={24} className="text-tennis-600" />
+            <Phone size={24} className="text-tennis-700" />
           </div>
           <div>
             <h4 className="mb-1 font-medium text-gray-800">Téléphone</h4>
@@ -17,7 +17,7 @@ export default function ContactInfo() {
               href="https://wa.me/237690117802"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center mt-2 font-medium text-tennis-600 hover:underline"
+              className="inline-flex items-center mt-2 font-medium text-tennis-700 transition-colors hover:text-tennis-900 hover:underline"
             >
               <span>Nous contacter sur WhatsApp</span>
               <ChevronRight size={16} className="ml-1" />
@@ -27,14 +27,14 @@ export default function ContactInfo() {
 
         <div className="flex items-start gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-lg shrink-0 bg-tennis-100">
-            <Mail size={24} className="text-tennis-600" />
+            <Mail size={24} className="text-tennis-700" />
           </div>
           <div>
             <h4 className="mb-1 font-medium text-gray-800">Email</h4>
             <p className="text-gray-600">coachcyrille05@gmail.com</p>
             <a
               href="mailto:contact@fota-tennis.com"
-              className="inline-flex items-center mt-2 font-medium text-tennis-600 hover:underline"
+              className="inline-flex items-center mt-2 font-medium text-tennis-700 transition-colors hover:text-tennis-900 hover:underline"
             >
               <span>Nous envoyer un email</span>
               <ChevronRight size={16} className="ml-1" />
@@ -44,7 +44,7 @@ export default function ContactInfo() {
 
         <div className="flex items-start gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-lg shrink-0 bg-tennis-100">
-            <MapPin size={24} className="text-tennis-600" />
+            <MapPin size={24} className="text-tennis-700" />
           </div>
           <div>
             <h4 className="mb-1 font-medium text-gray-800">Adresse</h4>
@@ -56,7 +56,7 @@ export default function ContactInfo() {
               href="https://maps.app.goo.gl/54LrNc2LbTV1HpRu6"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center mt-2 font-medium text-tennis-600 hover:underline"
+              className="inline-flex items-center mt-2 font-medium text-tennis-700 transition-colors hover:text-tennis-900 hover:underline"
             >
               <span>Voir sur Google Maps</span>
               <ChevronRight size={16} className="ml-1" />

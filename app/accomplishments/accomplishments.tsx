@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/pagination";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { accomplishments, AccomplishmentType } from "@/constants";
-import { animateOnScroll } from "@/lib/animations";
 import { Filter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AccomplishmentCard } from "./_components/accomplishement-card";
@@ -41,15 +40,7 @@ export function Accomplishments() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    animateOnScroll();
-    window.addEventListener("scroll", animateOnScroll);
-    return () => window.removeEventListener("scroll", animateOnScroll);
   }, []);
-
-  useEffect(() => {
-    // Réinitialiser la page quand le filtre change
-    setCurrentPage(1);
-  }, [filter]);
 
   return (
     <>
@@ -60,7 +51,7 @@ export function Accomplishments() {
           <div
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: `url("https://images.unsplash.com/photo-1659081436930-f86b3ed51dc2")`,
+              backgroundImage: 'url("/fota-team.jpg")',
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -92,9 +83,10 @@ export function Accomplishments() {
                 <Filter size={20} className="text-gray-500" />
                 <Tabs
                   value={filter}
-                  onValueChange={(value) =>
-                    setFilter(value as AccomplishmentType | "all")
-                  }
+                  onValueChange={(value) => {
+                    setFilter(value as AccomplishmentType | "all");
+                    setCurrentPage(1);
+                  }}
                 >
                   <TabsList>
                     <TabsTrigger value="all">Tous</TabsTrigger>

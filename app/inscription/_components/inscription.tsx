@@ -28,8 +28,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { format } from "date-fns";
 import { Loader2, Phone, User, UserPlus, Users } from "lucide-react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
+import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 
 // Définir le schéma de validation
@@ -85,6 +84,9 @@ type FormValues = z.infer<typeof formSchema>;
 export function Inscription() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [childrenCount, setChildrenCount] = useState(0);
+  const [formMessage, setFormMessage] = useState<
+    { type: "success" | "error"; text: string } | null
+  >(null);
 
   // Initialiser le formulaire avec react-hook-form
   const form = useForm<FormValues>({
@@ -101,7 +103,10 @@ export function Inscription() {
     },
   });
 
-  const inscriptionType = form.watch("inscriptionType");
+  const inscriptionType = useWatch({
+    control: form.control,
+    name: "inscriptionType",
+  });
 
   // Gérer l'ajout d'un enfant
   const handleAddChild = () => {
@@ -117,7 +122,10 @@ export function Inscription() {
         },
       ]);
     } else {
-      toast.error("Vous ne pouvez pas ajouter plus de 5 enfants.");
+      setFormMessage({
+        type: "error",
+        text: "Vous ne pouvez pas ajouter plus de 5 enfants.",
+      });
     }
   };
 
@@ -135,6 +143,7 @@ export function Inscription() {
   // Gérer la soumission du formulaire
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+    setFormMessage(null);
 
     try {
       // Formatter les données pour l'envoi
@@ -211,17 +220,19 @@ export function Inscription() {
         window.open(whatsappUrl, "_blank");
       }
 
-      toast.success(
-        "Nous vous contacterons prochainement pour confirmer votre inscription."
-      );
+      setFormMessage({
+        type: "success",
+        text: "Nous vous contacterons prochainement pour confirmer votre inscription.",
+      });
 
       // Réinitialiser le formulaire
       form.reset();
     } catch (error) {
       console.error("Erreur lors de l'envoi du formulaire:", error);
-      toast.error(
-        "Une erreur est survenue lors de l'envoi du formulaire. Veuillez réessayer."
-      );
+      setFormMessage({
+        type: "error",
+        text: "Une erreur est survenue lors de l'envoi du formulaire. Veuillez réessayer.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -823,7 +834,7 @@ export function Inscription() {
                   {/* Bouton de soumission */}
                   <Button
                     type="submit"
-                    className="w-full bg-tennis-500 hover:bg-tennis-600"
+                    className="w-full bg-tennis-700 hover:bg-tennis-800"
                     disabled={isSubmitting}
                     size="lg"
                   >
@@ -836,6 +847,20 @@ export function Inscription() {
                       "Envoyer mon inscription"
                     )}
                   </Button>
+
+                  {formMessage && (
+                    <p
+                      role={formMessage.type === "error" ? "alert" : "status"}
+                      aria-live="polite"
+                      className={`mt-4 rounded-lg p-3 text-sm ${
+                        formMessage.type === "error"
+                          ? "bg-red-50 text-red-800"
+                          : "bg-green-50 text-green-800"
+                      }`}
+                    >
+                      {formMessage.text}
+                    </p>
+                  )}
                 </div>
               </form>
             </Form>

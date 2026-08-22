@@ -27,13 +27,13 @@ export const AccomplishmentCard = ({
       style={{ animationDelay: `${0.1 * (index + 1)}s` }}
     >
       <div className="aspect-[16/9] relative overflow-hidden">
-        <Image
-          src={accomplisment.image}
-          alt={accomplisment.title}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-          width={100}
-          height={100}
-        />
+          <Image
+            src={accomplisment.image}
+            alt={accomplisment.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 hover:scale-110"
+          />
         <div className="absolute top-3 right-3">
           <span
             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${

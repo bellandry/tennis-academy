@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 
 export type ProgramHeroProps = {
@@ -14,15 +15,15 @@ export type ProgramHeroProps = {
 export const ProgramHero = ({ currentProgram }: ProgramHeroProps) => {
   return (
     <section className="relative">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${currentProgram.image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={currentProgram.image}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
@@ -35,7 +36,7 @@ export const ProgramHero = ({ currentProgram }: ProgramHeroProps) => {
             {currentProgram.description}
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="#contact">
+            <Link href="/contact">
               <Button
                 className={`${currentProgram.highlightColor} ${currentProgram.highlightTextColor} hover:opacity-90`}
               >
