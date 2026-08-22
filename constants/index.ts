@@ -67,7 +67,7 @@ export const programs = [
     textColor: "text-tennis-600",
     borderColor: "border-tennis-200",
     image:
-      "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=600&q=80",
+      "/programs/intermediaires-fota.jpg",
   },
   {
     title: "Cours compétition",
@@ -84,7 +84,7 @@ export const programs = [
     textColor: "text-amber-600",
     borderColor: "border-amber-200",
     image:
-      "https://images.unsplash.com/photo-1531315396756-905d68d21b56?auto=format&fit=crop&w=600&q=80",
+      "/programs/competition-fota.jpg",
   },
   {
     title: "Stages intensifs",
@@ -184,7 +184,7 @@ export const programmes = [
     highlightTextColor: "text-white",
     lightColor: "bg-tennis-100",
     image:
-      "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auhref=format&fit=crop&w=1200&q=80",
+      "/programs/intermediaires-fota.jpg",
   },
   {
     id: "competition",
@@ -219,7 +219,7 @@ export const programmes = [
     highlightTextColor: "text-white",
     lightColor: "bg-amber-100",
     image:
-      "https://images.unsplash.com/photo-1531315396756-905d68d21b56?auhref=format&fit=crop&w=1200&q=80",
+      "/programs/competition-fota.jpg",
   },
   {
     id: "stages",
@@ -352,7 +352,7 @@ export const accomplishments: Accomplishment[] = [
     date: "15 juin 2023",
     type: "competition",
     image:
-      "https://images.unsplash.com/photo-1549590143-d5855148a9d5?auto=format&fit=crop&w=800&q=80",
+      "/programs/competition-fota.jpg",
     students: ["Emma Dupont", "Lucas Martin", "Chloé Petit"],
     location: "Club de Tennis de Lyon",
     achievement: "1ère place en simple et double",
@@ -366,7 +366,7 @@ export const accomplishments: Accomplishment[] = [
     date: "12 avril 2023",
     type: "formation",
     image:
-      "https://images.unsplash.com/photo-1610645872672-4abefc4209ce?auto=format&fit=crop&w=800&q=80",
+      "/programs/intermediaires-fota.jpg",
     students: [
       "Alexandre Durand",
       "Sophie Moreau",
@@ -383,7 +383,7 @@ export const accomplishments: Accomplishment[] = [
     date: "22 mai 2023",
     type: "competition",
     image:
-      "https://images.unsplash.com/photo-1622134445466-e64696775939?auto=format&fit=crop&w=800&q=80",
+      "/eleve-fota.jpg",
     students: ["Nicolas Bernard", "Marie Robert", "Paul Dubois"],
     location: "Centre sportif de Montpellier",
     achievement: "Demi-finalistes",
@@ -397,7 +397,7 @@ export const accomplishments: Accomplishment[] = [
     date: "7 mars 2023",
     type: "evenement",
     image:
-      "https://images.unsplash.com/photo-1530915261396-61b5c10f461c?auto=format&fit=crop&w=800&q=80",
+      "/fota-team.jpg",
     students: [
       "Léa Rousseau",
       "Gabriel Martin",
@@ -414,7 +414,7 @@ export const accomplishments: Accomplishment[] = [
     date: "18 juillet 2023",
     type: "competition",
     image:
-      "https://images.unsplash.com/photo-1542144582-1ba00456b5e3?auto=format&fit=crop&w=800&q=80",
+      "/programs/competition-fota.jpg",
     students: ["Mathis Girard", "Camille Roux", "Nathan Leroy"],
     location: "Roland-Garros, Paris",
     achievement: "Vainqueurs",
@@ -428,7 +428,7 @@ export const accomplishments: Accomplishment[] = [
     date: "2 février 2023",
     type: "formation",
     image:
-      "https://images.unsplash.com/photo-1617339860293-ebb25b6887c7?auto=format&fit=crop&w=800&q=80",
+      "/eleve4-fota.jpg",
     students: [
       "Victor Simon",
       "Charlotte Gaillard",
@@ -445,7 +445,7 @@ export const accomplishments: Accomplishment[] = [
     date: "9 septembre 2023",
     type: "evenement",
     image:
-      "https://images.unsplash.com/photo-1558365146-9c461aa0ed5b?auto=format&fit=crop&w=800&q=80",
+      "/fota-team.jpg",
     students: ["Équipe complète de l'académie"],
     location: "Courts municipaux de Bordeaux",
   },
@@ -457,7 +457,7 @@ export const accomplishments: Accomplishment[] = [
     date: "28 août 2023",
     type: "competition",
     image:
-      "https://images.unsplash.com/photo-1559587564-f441de686473?auto=format&fit=crop&w=800&q=80",
+      "/programs/competition-fota.jpg",
     students: [
       "Emma Dupont",
       "Lucas Martin",
@@ -476,7 +476,7 @@ export const accomplishments: Accomplishment[] = [
     date: "15 juillet 2023",
     type: "formation",
     image:
-      "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?auto=format&fit=crop&w=800&q=80",
+      "/programs/intermediaires-fota.jpg",
     students: ["Plus de 30 étudiants de tous niveaux"],
     location: "Centre sportif de la côte d'Azur",
   },
@@ -488,7 +488,7 @@ export const accomplishments: Accomplishment[] = [
     date: "5 novembre 2023",
     type: "competition",
     image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+      "/programs/competition-fota.jpg",
     students: [
       "Nicolas Bernard",
       "Marie Robert",
@@ -507,7 +507,7 @@ export const accomplishments: Accomplishment[] = [
     date: "20 mai 2023",
     type: "evenement",
     image:
-      "https://images.unsplash.com/photo-1599491295783-6241f4b1c50f?auto=format&fit=crop&w=800&q=80",
+      "/fota-team.jpg",
     students: ["Tous les étudiants de l'académie"],
     location: "Notre académie",
   },
@@ -519,7 +519,7 @@ export const accomplishments: Accomplishment[] = [
     date: "8 décembre 2023",
     type: "competition",
     image:
-      "https://images.unsplash.com/photo-1541745474313-686197dab7ec?auto=format&fit=crop&w=800&q=80",
+      "/programs/competition-fota.jpg",
     students: ["Léa Rousseau", "Gabriel Martin", "Victor Simon"],
     location: "Tennis Club International, Madrid",
     achievement: "Quart de finaliste",
