@@ -6,7 +6,7 @@ export default function ContactCtaSection() {
   return (
     <section className="bg-white px-6 py-10 md:px-8 md:py-16">
       <div className="container mx-auto max-w-7xl">
-        <div className="relative isolate overflow-hidden rounded-[2rem] bg-[#073f3c] px-7 py-12 text-white shadow-2xl shadow-[#073f3c]/15 md:px-12 md:py-16">
+        <div className="relative isolate overflow-hidden rounded-[2rem] bg-[#073f3c] px-7 py-12 text-white shadow-2xl shadow-[#073f3c]/15 transition-transform duration-500 hover:-translate-y-1 animate-on-scroll md:px-12 md:py-16">
           <div className="pointer-events-none absolute -right-28 -top-32 -z-10 size-96 rounded-full border border-white/10" />
           <div className="pointer-events-none absolute -bottom-44 right-24 -z-10 size-96 rounded-full border border-white/10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-1/2 bg-gradient-to-l from-[#0c625a]/70 to-transparent" />
@@ -16,7 +16,7 @@ export default function ContactCtaSection() {
             alt=""
             width={180}
             height={180}
-            className="pointer-events-none absolute -right-4 bottom-[-3.5rem] size-40 rotate-12 object-contain opacity-90 md:right-12 md:size-48"
+            className="pointer-events-none absolute -right-4 bottom-[-3.5rem] size-40 rotate-12 object-contain opacity-90 animate-float md:right-12 md:size-48"
           />
 
           <div className="relative max-w-2xl">
@@ -36,7 +36,7 @@ export default function ContactCtaSection() {
             </p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex items-center rounded-full bg-[#d9ef63] px-6 py-3.5 text-sm font-bold text-[#073f3c] transition-colors hover:bg-[#e7fa8c]"
+              className="mt-8 inline-flex items-center rounded-full bg-[#d9ef63] px-6 py-3.5 text-sm font-bold text-[#073f3c] shadow-md shadow-[#d9ef63]/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e7fa8c] hover:shadow-lg"
             >
               Nous contacter
               <ArrowUpRight className="ml-2 size-4" />

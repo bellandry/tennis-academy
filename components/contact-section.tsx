@@ -17,7 +17,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-white py-24 md:py-32">
       <div className="container mx-auto max-w-7xl px-6 md:px-8">
-        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end animate-on-scroll">
           <div className="max-w-2xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-tennis-700">
               Parlons tennis
@@ -70,7 +70,7 @@ export default function ContactSection() {
 
             <a
               href="https://wa.me/237690117802"
-              className="inline-flex items-center text-sm font-semibold text-tennis-700 hover:text-tennis-900"
+              className="inline-flex items-center text-sm font-semibold text-tennis-700 transition-all duration-300 hover:-translate-y-0.5 hover:text-tennis-900"
             >
               Nous contacter sur WhatsApp
               <ArrowUpRight className="ml-2 size-4" />
