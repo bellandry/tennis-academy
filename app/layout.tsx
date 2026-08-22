@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { ScrollAnimations } from "@/components/scroll-animations";
+import { StructuredData } from "@/components/seo/structured-data";
+import { SITE_URL, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,13 +18,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fota.laclass.dev"),
+  metadataBase: new URL(SITE_URL),
   title: {
     template: "%s | FOTA Cameroun",
-    default: "FOTA Cameroun | Académie de tennis pour tous les âges et niveaux",
+    default: "FOTA Cameroun | Académie de tennis à Bafoussam",
+    absolute: `${siteConfig.name} | Académie de tennis à Bafoussam`,
   },
-  description:
-    "FOTA est une académie de tennis ouverte aux enfants, adultes et seniors. Cours pour débutants, intermédiaires, experts et compétiteurs. Encadrement professionnel, sparring partenaires et progression assurée.",
+  description: siteConfig.description,
   keywords:
     "tennis Cameroun, académie tennis, cours de tennis enfants, cours de tennis adultes, tennis débutant, tennis expert, sparring, compétition, FOTA",
   robots: "index, follow",
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     title: "FOTA Cameroun | Académie de tennis complète pour tous les niveaux",
     description:
       "Rejoignez FOTA, une académie de tennis professionnelle ouverte à tous les âges et niveaux. Entraînez-vous avec les meilleurs coachs au Cameroun.",
-    url: "https://fota.laclass.dev",
+    url: SITE_URL,
     images: [
       {
         url: "/og-image.png",
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
     url: "https://laclass.dev",
   },
   alternates: {
-    canonical: "https://fota.laclass.dev",
+    canonical: "/",
   },
 };
 
@@ -73,6 +75,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
+        <StructuredData />
         <ScrollAnimations />
         {children}
       </body>

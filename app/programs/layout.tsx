@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: "Programmes de formation tennis | FOTA Cameroun",
     description:
       "FOTA propose des programmes de tennis complets pour tous les niveaux et tous les âges. Découvrez les modalités, les jours d'entraînement et les parcours disponibles.",
-    url: "https://fota.laclass.dev/programs",
     images: [
       {
         url: "/og-image.png",
@@ -29,9 +28,6 @@ export const metadata: Metadata = {
     description:
       "Consultez nos différents programmes de tennis, adaptés à chaque niveau : loisir, performance, compétition. Enfants, adultes, seniors… tout le monde trouve sa place chez FOTA !",
     images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://fota.laclass.dev/programmes",
   },
 };
 
