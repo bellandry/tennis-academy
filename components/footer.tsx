@@ -3,6 +3,8 @@ import { ChevronRight, Facebook, Instagram, YoutubeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 const socialIcons = {
   facebook: {
     icon: <Facebook className="size-4" />,
@@ -125,7 +127,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between pt-8 border-t border-gray-800 md:flex-row">
           <p className="mb-4 text-sm text-gray-500 md:mb-0">
-            &copy; {new Date().getFullYear()} Tennis Academy. Tous droits
+            &copy; {CURRENT_YEAR} Tennis Academy. Tous droits
             réservés.
           </p>
 
