@@ -1,6 +1,7 @@
 "use client";
 
 import { programs } from "@/constants";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 import { animateOnScroll } from "../lib/animations";
@@ -14,36 +15,37 @@ export default function ProgramsSection() {
   }, []);
 
   return (
-    <section id="programs" className="section-padding bg-gray-50 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 pointer-events-none h-32"></div>
-
-      <div className="container mx-auto px-6 md:px-8 relative">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-tennis-100 text-tennis-600 font-medium text-sm mb-4 animate-on-scroll">
-            Nos programmes
-          </span>
-          <h2 className="section-heading animate-on-scroll">
-            Programmes adaptés à{" "}
-            <span className="text-gradient">tous les niveaux</span>
-          </h2>
-          <p className="section-subheading animate-on-scroll">
-            Que vous soyez débutant ou joueur confirmé, nous avons un programme
-            qui correspond à vos besoins et objectifs.
+    <section id="programs" className="relative overflow-hidden bg-white py-24 md:py-32">
+      <div className="container relative mx-auto max-w-7xl px-6 md:px-8">
+        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-tennis-700">
+              Nos programmes
+            </p>
+            <h2 className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 md:text-6xl">
+              Un programme pour chaque
+              <span className="block text-tennis-600">façon de jouer.</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-base leading-7 text-slate-500 md:text-right">
+            Du premier échange à la préparation compétition, choisissez le cadre
+            qui correspond à votre rythme et à vos objectifs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
-          {programs.slice(0, 3).map((program, index) => (
-            <ProgramCard program={program} index={index} key={index} />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {programs.slice(0, 4).map((program, index) => (
+            <ProgramCard program={program} index={index} key={program.slug} />
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="mt-12 flex justify-center md:justify-end">
           <Link
             href="/programs/debutants"
-            className="btn-tennis animate-on-scroll"
+            className="inline-flex items-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 transition-colors hover:border-tennis-500 hover:bg-tennis-50 hover:text-tennis-700"
           >
-            Voir tous nos programmes
+            Voir tous les programmes
+            <ArrowUpRight className="ml-2 size-4" />
           </Link>
         </div>
       </div>

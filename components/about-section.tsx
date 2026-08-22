@@ -1,8 +1,11 @@
 "use client";
 
 import { features } from "@/constants";
-import { animateOnScroll } from "@/lib/animations";
+import { ArrowUpRight, Check } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
+import { animateOnScroll } from "@/lib/animations";
 
 export default function AboutSection() {
   useEffect(() => {
@@ -12,86 +15,81 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section id="a-propos" className="relative bg-white section-padding">
-      <div className="container px-6 mx-auto md:px-8">
-        <div className="mb-16 text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-tennis-100 text-tennis-600 font-medium text-sm mb-4 animate-on-scroll">
-            À propos de nous
-          </span>
-          <h2 className="section-heading animate-on-scroll">
-            Notre passion pour{" "}
-            <span className="text-gradient">l&apos;excellence</span>
-          </h2>
-          <p className="section-subheading animate-on-scroll">
-            Depuis plus de 10 ans, nous développons des talents et partageons
-            notre passion pour le tennis à travers une approche pédagogique
-            innovante et personnalisée.
+    <section id="a-propos" className="relative overflow-hidden bg-[#073f3c] py-24 text-white md:py-32">
+      <div className="pointer-events-none absolute -right-32 top-16 h-80 w-80 rounded-full border border-white/10" />
+      <div className="pointer-events-none absolute -right-16 top-32 h-64 w-64 rounded-full border border-white/10" />
+
+      <div className="container relative mx-auto grid max-w-7xl items-center gap-14 px-6 md:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <div className="animate-on-scroll">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#d9ef63]">
+            À propos de FOTA
           </p>
-        </div>
+          <h2 className="max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">
+            Nous construisons des joueurs
+            <span className="text-[#59c7b7]"> plus solides.</span>
+          </h2>
+          <p className="mt-7 max-w-xl text-base leading-8 text-white/70 md:text-lg">
+            Depuis 2012, notre académie rend l’apprentissage du tennis plus
+            accessible, plus lisible et plus humain. Chaque séance combine la
+            précision technique, le plaisir du jeu et un accompagnement adapté à
+            votre rythme.
+          </p>
 
-        <div className="grid items-center gap-16 md:grid-cols-2">
-          <div
-            className="relative animate-on-scroll"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <div className="overflow-hidden rounded-2xl shadow-subtle-lg">
-              <div className="aspect-[4/3] relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-tennis-600/20 to-transparent"></div>
-                {/* Replace with actual image later */}
-                <div
-                  className="absolute inset-0 bg-tennis-200"
-                  style={{
-                    backgroundImage: `url('/fota-team.jpg')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                ></div>
-              </div>
-            </div>
-
-            {/* Decorative elements */}
-            <div className="absolute w-24 h-24 rounded-lg -bottom-5 -right-5 bg-tennis-100 -z-10"></div>
-            <div className="absolute w-16 h-16 border-2 rounded-lg -top-5 -left-5 border-tennis-300 -z-10"></div>
+          <div className="mt-8 space-y-3">
+            {["Une progression adaptée à votre niveau", "Des coachs présents à chaque étape", "Un cadre pensé pour aimer jouer"].map(
+              (item) => (
+                <div key={item} className="flex items-center gap-3 text-sm text-white/85">
+                  <span className="flex size-6 items-center justify-center rounded-full bg-[#d9ef63] text-[#073f3c]">
+                    <Check className="size-4" />
+                  </span>
+                  {item}
+                </div>
+              )
+            )}
           </div>
 
-          <div
-            className="space-y-6 animate-on-scroll"
-            style={{ animationDelay: "0.4s" }}
+          <Link
+            href="/infos"
+            className="mt-9 inline-flex items-center rounded-full bg-[#16a79b] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#128d84]"
           >
-            <h3 className="mb-4 text-2xl font-bold md:text-3xl">
-              Notre histoire et notre mission
-            </h3>
+            Découvrir notre approche
+            <ArrowUpRight className="ml-2 size-4" />
+          </Link>
+        </div>
 
-            <p className="mb-4 text-gray-600">
-              Fondée en 2012 par d&apos;anciens joueurs professionnels, notre
-              académie s&apos;est donnée pour mission de rendre accessible
-              l&apos;apprentissage du tennis de qualité à tous les passionnés,
-              quel que soit leur niveau.
-            </p>
-
-            <p className="mb-8 text-gray-600">
-              Nos méthodes d&apos;enseignement combinent techniques
-              traditionnelles et approches modernes, avec un accent particulier
-              sur le développement personnel de chaque joueur.
-            </p>
-
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {features.map((feature, index) => (
-                <div key={index} className="flex gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 bg-tennis-50">
-                    <feature.icon size={24} className="text-tennis-500" />
-                  </div>
-                  <div>
-                    <h4 className="mb-1 font-medium text-gray-800">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-gray-600">
-                      {feature.description}
-                    </p>
-                  </div>
+        <div className="relative animate-on-scroll" style={{ animationDelay: "0.2s" }}>
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 p-3 shadow-2xl shadow-black/20">
+            <div className="relative aspect-[1.15] overflow-hidden rounded-[1.5rem]">
+              <Image
+                src="/fota-team.jpg"
+                alt="L'équipe FOTA sur un court de tennis"
+                fill
+                sizes="(max-width: 1024px) 90vw, 55vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#052f2e]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d9ef63]">
+                    L&apos;esprit FOTA
+                  </p>
+                  <p className="mt-1 text-2xl font-semibold text-white">Grandir ensemble.</p>
                 </div>
-              ))}
+                <div className="hidden rounded-xl bg-white/15 px-4 py-3 text-right backdrop-blur-md sm:block">
+                  <p className="text-2xl font-bold text-white">4</p>
+                  <p className="text-xs text-white/70">professeurs certifiés</p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="absolute -bottom-8 -right-5 grid w-64 grid-cols-2 gap-3 rounded-2xl border border-[#bce2d4]/30 bg-[#0b514b] p-4 shadow-xl sm:-right-8">
+            {features.slice(0, 4).map((feature) => (
+              <div key={feature.title} className="min-w-0">
+                <feature.icon className="mb-2 size-5 text-[#d9ef63]" />
+                <p className="text-xs font-semibold leading-4 text-white">{feature.title}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
