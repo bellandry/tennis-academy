@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
-import { Toaster } from "sonner";
 import { ScrollAnimations } from "@/components/scroll-animations";
 import "./globals.css";
 
@@ -74,7 +73,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased`}
       >
-        <Toaster richColors position="bottom-right" expand={true} />
         <ScrollAnimations />
         {children}
       </body>

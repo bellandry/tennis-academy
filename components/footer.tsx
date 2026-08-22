@@ -60,9 +60,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
+            <h3 className="mb-4 text-lg font-semibold text-white">
               Liens rapides
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {navLinks.map((item) => (
                 <li key={item.name}>
@@ -79,9 +79,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
+            <h3 className="mb-4 text-lg font-semibold text-white">
               Nos services
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {programs.map((program) => (
                 <li key={program.slug}>
@@ -98,9 +98,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
+            <h3 className="mb-4 text-lg font-semibold text-white">
               Newsletter
-            </h4>
+            </h3>
             <p className="mb-4 text-gray-400">
               Abonnez-vous pour recevoir nos dernières actualités et offres
               spéciales.
