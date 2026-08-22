@@ -1,19 +1,9 @@
-"use client";
-
 import { features } from "@/constants";
 import { ArrowUpRight, Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import { animateOnScroll } from "@/lib/animations";
 
 export default function AboutSection() {
-  useEffect(() => {
-    animateOnScroll();
-    window.addEventListener("scroll", animateOnScroll);
-    return () => window.removeEventListener("scroll", animateOnScroll);
-  }, []);
-
   return (
     <section id="a-propos" className="relative overflow-hidden bg-[#073f3c] py-24 text-white md:py-32">
       <div className="pointer-events-none absolute -right-32 top-16 h-80 w-80 rounded-full border border-white/10" />

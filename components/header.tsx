@@ -38,6 +38,7 @@ export default function Header() {
             alt="FOTA Tennis Academy"
             className="h-10 w-auto object-contain"
             priority
+            fetchPriority="high"
           />
         </Link>
 

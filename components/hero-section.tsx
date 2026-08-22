@@ -81,6 +81,7 @@ export default function HeroSection() {
               alt="Joueur de tennis de la FOTA en entraînement"
               fill
               priority
+              fetchPriority="high"
               sizes="(max-width: 1024px) 90vw, 45vw"
               className="object-cover object-center transition-transform duration-700 hover:scale-105"
             />

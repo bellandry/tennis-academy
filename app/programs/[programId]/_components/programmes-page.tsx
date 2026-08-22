@@ -2,7 +2,6 @@
 
 import NotFoundPage from "@/app/not-found";
 import { programmes } from "@/constants";
-import { animateOnScroll } from "@/lib/animations";
 import { useEffect } from "react";
 import { InfoCards } from "./info-cards";
 import { MainContent } from "./main-content";
@@ -17,9 +16,6 @@ type ProgrammesPageProps = {
 export function ProgrammesPage({ programId }: ProgrammesPageProps) {
   useEffect(() => {
     window.scrollTo(0, 0);
-    animateOnScroll();
-    window.addEventListener("scroll", animateOnScroll);
-    return () => window.removeEventListener("scroll", animateOnScroll);
   }, [programId]);
 
   const currentProgram = programmes.find((p) => p.id === programId);
