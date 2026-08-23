@@ -1,6 +1,6 @@
 import AboutSection from "@/components/about-section";
 import ContactCtaSection from "@/components/contact-cta-section";
-import ContactCardSection from "@/components/contact-card-section";
+import FaqSection from "@/components/faq-section";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
@@ -16,7 +16,7 @@ export default function Home() {
       <ProgramsSection />
       <TestimonialsSection />
       <ContactCtaSection />
-      <ContactCardSection />
+      <FaqSection />
       <Footer />
     </div>
   );
